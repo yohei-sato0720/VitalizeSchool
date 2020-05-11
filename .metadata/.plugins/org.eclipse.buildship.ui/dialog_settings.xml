@@ -6,4 +6,6 @@
 		<list key="working_sets">
 		</list>
 	</section>
+	<section name="org.eclipse.buildship.ui.wizard.project.creation">
+	</section>
 </section>
