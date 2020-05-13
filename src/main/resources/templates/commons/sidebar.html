@@ -3,86 +3,50 @@
       xmlns:th="http://www.thymeleaf.org">
 <body>
 <div th:fragment="sidebar()" th:remove="tag" th:with="url=${#httpServletRequest.requestURI}">
-    <nav class="col-md-2 d-none d-md-block bg-light sidebar slide-target">
-        <div class="sidebar-sticky">
-            <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                            <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">ホーム</a>
-                            <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">プロフィール</a>
-                            <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">メッセージ</a>
-                            <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">セッティング</a>
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="tab-content" id="v-pills-tabContent">
-                            <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-                                <p>ホームの文章です。...</p>
-                            </div>
-                            <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
-                                <p>プロフィールの文章です。...</p>
-                            </div>
-                            <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
-                                <p>メッセージの文章です。...</p>
-                            </div>
-                            <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
-                                <p>セッティングの文章です。...</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        div class="wrapper">
-                        <!-- Sidebar -->
-                        <nav id="sidebar">
-                            <div class="sidebar-header">
-                                <h3>Bootstrap Sidebar</h3>
-                            </div>
-                            <ul class="list-unstyled components">
-                                <p>Dummy Heading</p>
-                                <li class="active">
-                                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
-                                    <ul class="collapse list-unstyled" id="homeSubmenu">
-                                        <li>
-                                            <a href="#">Home 1</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Home 2</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Home 3</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#">About</a>
-                                </li>
-                                <li>
-                                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
-                                    <ul class="collapse list-unstyled" id="pageSubmenu">
-                                        <li>
-                                            <a href="#">Page 1</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Page 2</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Page 3</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#">Portfolio</a>
-                                </li>
-                                <li>
-                                    <a href="#">Contact</a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-            </h6>
+    <!-- Sidebar -->
+        <div class="sidebar-header">
+            <h3>Sidebar</h3>
         </div>
+        <ul class="list-unstyled components">
+            <p>Dummy Heading</p>
+            <li class="active">
+                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
+                <ul class="collapse list-unstyled" id="homeSubmenu">
+                    <li>
+                        <a href="#">Home 1</a>
+                    </li>
+                    <li>
+                        <a href="#">Home 2</a>
+                    </li>
+                    <li>
+                        <a href="#">Home 3</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">About</a>
+            </li>
+            <li>
+                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
+                <ul class="collapse list-unstyled" id="pageSubmenu">
+                    <li>
+                        <a href="#">Page 1</a>
+                    </li>
+                    <li>
+                        <a href="#">Page 2</a>
+                    </li>
+                    <li>
+                        <a href="#">Page 3</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Portfolio</a>
+            </li>
+            <li>
+                <a href="#">Contact</a>
+            </li>
+        </ul>
     </nav>
 </div>
 </body>
