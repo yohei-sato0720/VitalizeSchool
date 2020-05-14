@@ -4,50 +4,173 @@
 <body>
 <div th:fragment="sidebar()" th:remove="tag" th:with="url=${#httpServletRequest.requestURI}">
     <!-- Sidebar -->
-        <div class="sidebar-header">
-            <h3>Sidebar</h3>
+    <div class="sidebar-header">
+        <h3></h3>
+    </div>
+    <ul class="list-group list-group-horizontal">
+        <div class="card text-white bg-dark mb-4" style="height: 60rem;">
+            <ul class="list-unstyled components" style="width: 10rem;">
+                <li class="active">
+                    <strong href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle ">社員</strong>
+                    <ul class="collapse list-unstyled col-sm-9 col-lg-10" id="homeSubmenu">
+                        <li>
+                            <strong href="#">社員マスタ</strong>
+                        </li>
+                        <li>
+                            <strong href="#">権限マスタ</strong>
+                        </li>
+                        <li>
+                            <strong href="#">社員</strong>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"></a>
+                </li>
+                <li>
+                    <strong href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle text-white">銀行</strong>
+                    <ul class="collapse list-unstyled col-sm-9 col-lg-10 text-white" id="pageSubmenu">
+                        <li>
+                            <strong href="#">銀行</strong>
+                        </li>
+                        <li>
+                            <strong href="#">支店</strong>
+                        </li>
+                        <li>
+                            <strong href="#">所属</strong>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <strong href="#Submenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle text-white">口座</strong>
+                    <ul class="collapse list-unstyled col-sm-9 col-lg-10 text-white" id="Submenu">
+                        <li>
+                            <strong href="#">口座</strong>
+                        </li>
+                        <li>
+                            <strong href="#">残高</strong>
+                        </li>
+                        <li>
+                            <strong href="#">取引履歴</strong>
+                        </li>
+                        <li>
+                            <strong href="#">名称マスタ</strong>
+                        </li>
+                        <li>
+                            <strong href="#">手数料マスタ</strong>
+                        </li>
+                        <li>
+                            <strong href="#">顧客</strong>
+                        </li>
+                        <li>
+                            <strong href="#">システム設定</strong>
+                        </li>
+                        <li>
+                            <strong href="#">定期実行</strong>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
         </div>
-        <ul class="list-unstyled components">
-            <p>Dummy Heading</p>
-            <li class="active">
-                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
-                <ul class="collapse list-unstyled" id="homeSubmenu">
-                    <li>
-                        <a href="#">Home 1</a>
-                    </li>
-                    <li>
-                        <a href="#">Home 2</a>
-                    </li>
-                    <li>
-                        <a href="#">Home 3</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">About</a>
-            </li>
-            <li>
-                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
-                <ul class="collapse list-unstyled" id="pageSubmenu">
-                    <li>
-                        <a href="#">Page 1</a>
-                    </li>
-                    <li>
-                        <a href="#">Page 2</a>
-                    </li>
-                    <li>
-                        <a href="#">Page 3</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">Portfolio</a>
-            </li>
-            <li>
-                <a href="#">Contact</a>
-            </li>
-        </ul>
-    </nav>
+        <main role="main" class="col-md-9 col-lg-10 px-5 ml-sm-auto">
+            <div class="col-lg-8 mt-sm-30 mt-xs-30">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-sm-flex justify-content-between align-items-center">
+                            <h4 class="header-title">取引履歴　一覧</h4>
+                            <div class="trd-history-tabs">
+                                <ul class="nav" role="tablist">
+                                    <li>
+                                        <a class="active" data-toggle="tab" href="#buy_order" role="tab">出金/</a>
+                                    </li>
+                                    <li>
+                                        <a data-toggle="tab" href="#sell_order" role="tab">残高</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <select class="custome-select border-0 pr-3">
+                                <option selected>過去24時間</option>
+                                <option value="0">過去1ヶ月間</option>
+                            </select>
+                        </div>
+                        <div class="trad-history mt-4">
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade show active" id="buy_order" role="tabpanel">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered">
+                                            <tr class="heading-td">
+                                                <td>取引 ID</td>
+                                                <td>取引日</td>
+                                                <td>ステータス</td>
+                                                <td>取引額</td>
+                                                <td>残高</td>
+                                            </tr>
+                                            <tr>
+                                                <td>78211</td>
+                                                <td>7.00 AM</td>
+                                                <td>テスト</td>
+                                                <td>1000円</td>
+                                                <td>500,000円</td>
+                                            </tr>
+                                            <tr>
+                                                <td>782782</td>
+                                                <td>8.00 AM</td>
+                                                <td>テスト</td>
+                                                <td>1000円</td>
+                                                <td>500,000円</td>
+                                            </tr>
+                                            <tr>
+                                                <td>89675978</td>
+                                                <td>6.00 pM</td>
+                                                <td>テスト</td>
+                                                <td>1000円</td>
+                                                <td>500,000円</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="sell_order" role="tabpanel">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered">
+                                            <tr class="heading-td">
+                                                <td>取引 ID</td>
+                                                <td>取引日</td>
+                                                <td>ステータス</td>
+                                                <td>取引額</td>
+                                                <td>残高</td>
+                                            </tr>
+                                            <tr>
+                                                <td>782</td>
+                                                <td>7.40 AM</td>
+                                                <td>テスト</td>
+                                                <td>1030円</td>
+                                                <td>220,000円</td>
+                                            </tr>
+                                            <tr>
+                                                <td>42</td>
+                                                <td>2.34 AM</td>
+                                                <td>テスト</td>
+                                                <td>2000円</td>
+                                                <td>320,000円</td>
+                                            </tr>
+                                            <tr>
+                                                <td>73</td>
+                                                <td>4.36 pM</td>
+                                                <td>テスト</td>
+                                                <td>1200円</td>
+                                                <td>47,000円</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </ul>
 </div>
 </body>
 </html>
+
