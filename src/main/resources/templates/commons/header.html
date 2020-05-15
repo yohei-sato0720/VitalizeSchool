@@ -9,20 +9,16 @@
     <header th:fragment="header" th:remove="tag">
       <div>
         <!-- 切替ボタン -->
-        <nav class="navbar navbar-dark bg-dark">
+        <nav class="navbar navbar-dark bg-info">
           <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="折り畳みナビゲーション">
             <span class="navbar-toggler-icon"></span>
           </button>
           <ul class="text-white mr-auto mt-2 mt-lg-0">
-            Vitalize銀行
+            <h1 class="text-white"><a>Vitalize銀行</a></h1>
           </ul>
-          <form class="form-inline my-2 my-lg-0 ml-auto">
-            <input class="form-control mr-sm-2" type="text" placeholder="検索..." aria-label="検索...">
-            <button type="submit" class="btn btn-outline-success my-2 my-sm-0">検索</button>
-          </form>
         </nav>
         <div class="collapse" id="navbarToggleExternalContent">
-          <div class="bg-dark p-4">
+          <div class="bg-info p-4">
             <h4 class="text-white"><a>Vitalize銀行</a></h4>
             <span class="text-muted"></span>
           </div>
