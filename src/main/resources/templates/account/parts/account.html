@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div th:fragment="InputField" th:remove="tag">
+  <div class="col-md-6 pt-3">
+    <div class="card p-0">
+      <h5 class="card-header">口座 情報</h5>
+      <div class="card-body">
+		  <div class="form-group">
+		    <label>口座番号</label>
+		    <input type="number" class="form-control" placeholder="口座番号">
+		  </div>
+		  <div class="form-group">
+		    <label>顧客ID</label>
+		    <input type="text" class="form-control" placeholder="顧客ID">
+		  </div>
+		  <div class="form-group">
+		    <label>支店コード</label>
+		    <input type="text" class="form-control" placeholder="支店コード">
+		  </div>
+		  <div class="form-group">
+		    <label>口座開設日時</label>
+		    <input type="datetime" class="form-control" placeholder="口座開設日時">
+		  </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
