@@ -10,36 +10,36 @@ import com.example.demo.services.AccountFeatureService;
 
 @Controller
 @RequiredArgsConstructor
-public class AccountFeatureController {
+public class BranchController {
 
-	/** to 口座機能 一覧画面表示*/
-    @RequestMapping(value = "account_feature/list", method = RequestMethod.GET)
+	/** to 支店機能 一覧画面表示*/
+    @RequestMapping(value = "branch/list", method = RequestMethod.GET)
     public String list(Model model) {
         model.addAttribute("message", "sum");
-        return "account_feature/list";
+        return "branch/list";
     }
 
-	/** to 口座機能 詳細画面表示*/
-    @RequestMapping(value = "account_feature/view", method = RequestMethod.GET)
+	/** to 支店機能 詳細画面表示*/
+    @RequestMapping(value = "branch/view", method = RequestMethod.GET)
     public String view(Model model) {
         model.addAttribute("message", "Hello World!!");
-        return "account_feature/view";
+        return "branch/view";
     }
 
-    /** to 口座機能 削除*/
+    /** to 支店機能 削除*/
 
-	/** to 口座機能 登録画面表示*/
-    @RequestMapping(value = "account_feature/add", method = RequestMethod.GET)
+	/** to 支店機能 登録画面表示*/
+    @RequestMapping(value = "branch/add", method = RequestMethod.GET)
     public String add(Model model) {
         model.addAttribute("message", "Hello World!!");
-        return "account_feature/add";
+        return "branch/add";
     }
 
-	/** to 口座機能 編集画面表示*/
-    @RequestMapping(value = "account_feature/edit", method = RequestMethod.GET)
+	/** to 支店機能 編集画面表示*/
+    @RequestMapping(value = "branch/edit", method = RequestMethod.GET)
     public String edit(Model model) {
         model.addAttribute("message", "Hello World!!");
-        return "account_feature/edit";
+        return "branch/edit";
     }
 
 }
