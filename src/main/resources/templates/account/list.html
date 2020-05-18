@@ -4,13 +4,205 @@
     <meta charset="utf-8">
     <title>VitalizeBank</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  </head>
-  <body>
     <div th:replace="commons/header :: header"></div>
-    <div th:replace="commons/sidebar :: sidebar"></div>
+  </head>
+  <ul class="list-group list-group-horizontal">
+      <aside>
+        <div th:replace="commons/sidebar :: sidebar"></div>
+      </aside><br/>
+      <main role="main" class="col-md-12 col-lg-11 px-5 ml-sm-auto">
+          <div class="col-lg-12">
+              <div class="card">
+                  <div class="card-body">
+                      <div class="d-sm-flex justify-content-between align-items-center">
+                          <h4 class="header-title">口座  一覧</h4>
+                          <div class="trd-history-tabs">
+                              <ul class="nav" role="tablist">
+                                  <li>
+                                      <a class="active" data-toggle="tab" href="#buy_order" role="tab">出金/</a>
+                                  </li>
+                                  <li>
+                                      <a data-toggle="tab" href="#sell_order" role="tab">残高（ソートで使えるかも）</a>
+                                  </li>
+                              </ul>
+                          </div>
+                          <select class="custome-select border-0 pr-3">
+                              <option selected>過去24時間（ソートで使えるかも）</option>
+                              <option value="0">過去1ヶ月間</option>
+                          </select>
+                      </div><br/>
+                      <div class="row">
+                          <div class="form-group col-3">
+                              <label th:for="investigationIds" class="col-form-label col-form-label-sm">口座番号</label>
+                              <input type="text" class="form-control" placeholder="テキスト入力欄">
+                              <label th:for="investigationIds" class="col-form-label col-form-label-sm">顧客ID</label>
+                              <input type="text" class="form-control" placeholder="テキスト入力欄">
+                          </div>
+                          <div class="form-group col-3">
+                              <label class="col-form-label col-form-label-sm">支店コード</label>
+                              <input class="form-control" placeholder="テキスト入力欄">
+                              <label class="col-form-label col-form-label-sm">口座開設日時</label>
+                              <input class="form-control" placeholder="テキスト入力欄">
+                          </div>
+                      </div><br/>
+                      <div class="text-center">
+                          <span class="input-group-btn">
+                              <button type="button" class="btn btn-primary">検索</button>
+                          </span>
+                          <span class="input-group-btn">
+                              <button type="button" class="btn btn-link">検索クリア</button>
+                          </span>
+                      </div>
+                      <ul class="pagination">
+                          <li class="page-item"><a class="page-link" href="#">前へ</a></li>
+                          <li class="page-item"><a class="page-link" href="#">1</a></li>
+                          <li class="page-item"><a class="page-link" href="#">2</a></li>
+                          <li class="page-item"><a class="page-link" href="#">3</a></li>
+                          <li class="page-item"><a class="page-link" href="#">次へ</a></li>
+                      </ul>
+                      <div class="text-right">
+                          <span class="input-group-btn">
+                          <a class="btn btn-primary ml-1 text-center align-middle" th:href="@{/account/add}" role="button">登録</a>
+                          </span>
+                      <div/>
+                      <div class="trad-history mt-4">
+                          <div class="tab-content" id="myTabContent">
+                              <div class="tab-pane fade show active" id="buy_order" role="tabpanel">
+                                  <div class="table-responsive">
+                                      <table class="table table-bordered">
+                                          <tr class="heading-td">
+                                              <td></td>
+                                              <td></td>
+                                              <td>口座番号</td>
+                                              <td>顧客ID</td>
+                                              <td>支店コード</td>
+                                              <td>口座開設日時</td>
+                                          </tr>
+                                          <tr>
+                                              <td>
+                                                  <span class="input-group-btn">
+                                                   <a class="btn btn-warning ml-1 text-center align-middle" th:href="@{/account/edit}" role="button">編集</a>
+                                                  </span>
+                                              </td>
+                                              <td>
+                                                  <span class="input-group-btn">
+                                                      <button type="button" class="btn btn-success">詳細</button>
+                                                  </span>
+                                              </td>
+                                              <td>78211</td>
+                                              <td>Customer1</td>
+                                              <td>408</td>
+                                              <td>1996-07-20 00:00:00</td>
+                                          </tr>
+                                          <tr>
+                                              <td>
+                                                  <span class="input-group-btn">
+                                                   <a class="btn btn-warning ml-1 text-center align-middle" th:href="@{/account/edit}" role="button">編集</a>
+                                                  </span>
+                                              </td>
+                                              <td>
+                                                  <span class="input-group-btn">
+                                                      <button type="button" class="btn btn-success">詳細</button>
+                                                  </span>
+                                              </td>
+                                              <td>78211</td>
+                                              <td>Customer1</td>
+                                              <td>408</td>
+                                              <td>1996-07-20 00:00:00</td>
+                                          </tr>
+                                          <tr>
+                                              <td>
+                                                  <span class="input-group-btn">
+                                                   <a class="btn btn-warning ml-1 text-center align-middle" th:href="@{/account/edit}" role="button">編集</a>
+                                                  </span>
+                                              </td>
+                                              <td>
+                                                  <span class="input-group-btn">
+                                                      <button type="button" class="btn btn-success">詳細</button>
+                                                  </span>
+                                              </td>
+                                              <td>78211</td>
+                                              <td>Customer1</td>
+                                              <td>408</td>
+                                              <td>1996-07-20 00:00:00</td>
+                                          </tr>
+                                      </table>
+                                  </div>
+                              </div>
+                              <div class="tab-pane fade" id="sell_order" role="tabpanel">
+                                  <div class="table-responsive">
+                                      <table class="table table-bordered">
+                                          <tr class="heading-td">
+                                              <td></td>
+                                              <td></td>
+                                              <td>78211</td>
+                                              <td>Customer1</td>
+                                              <td>408</td>
+                                              <td>1996-07-20 00:00:00</td>
+                                          </tr>
+                                          <tr>
+                                              <td>
+                                                  <span class="input-group-btn">
+                                                   <a class="btn btn-warning ml-1 text-center align-middle" th:href="@{/account/edit}" role="button">編集</a>
+                                                  </span>
+                                              </td>
+                                              <td>
+                                                  <span class="input-group-btn">
+                                                      <button type="button" class="btn btn-success">詳細</button>
+                                                  </span>
+                                              </td>
+                                              <td>78211</td>
+                                              <td>Customer1</td>
+                                              <td>408</td>
+                                              <td>1996-07-20 00:00:00</td>
+                                          </tr>
+                                          <tr>
+                                              <td>
+                                                  <span class="input-group-btn">
+                                                   <a class="btn btn-warning ml-1 text-center align-middle" th:href="@{/account/edit}" role="button">編集</a>
+                                                  </span>
+                                              </td>
+                                              <td>
+                                                  <span class="input-group-btn">
+                                                      <button type="button" class="btn btn-success">詳細</button>
+                                                  </span>
+                                              </td>
+                                              <td>78211</td>
+                                              <td>Customer1</td>
+                                              <td>408</td>
+                                              <td>1996-07-20 00:00:00</td>
+                                          </tr>
+                                          <tr>
+                                              <td>
+                                                  <span class="input-group-btn">
+                                                   <a class="btn btn-warning ml-1 text-center align-middle" th:href="@{/account/edit}" role="button">編集</a>
+                                                  </span>
+                                              </td>
+                                              <td>
+                                                  <span class="input-group-btn">
+                                                      <button type="button" class="btn btn-success">詳細</button>
+                                                  </span>
+                                              </td>
+                                              <td>78211</td>
+                                              <td>Customer1</td>
+                                              <td>408</td>
+                                              <td>1996-07-20 00:00:00</td>
+                                          </tr>
+                                      </table>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          </div>
+      </main>
+  </ul>
+  <body>
     <div th:replace="commons/footer :: footer"></div>
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   </body>
 </html>
