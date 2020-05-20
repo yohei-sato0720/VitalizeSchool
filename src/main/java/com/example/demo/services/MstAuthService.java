@@ -1,29 +1,35 @@
 package com.example.demo.services;
 
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
 import java.util.List;
+import lombok.RequiredArgsConstructor;
+import javax.transaction.Transactional;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import com.example.demo.repositories.MstAuthRepository;
+import com.example.demo.entity.MstAuth;
 
 /**
  * 権限マスタ一覧情報 Service
  */
 @Service
-
+@RequiredArgsConstructor
+@Transactional
 public class MstAuthService {
-    /**
-     * ユーザー情報 Repository
-     */
-    @Autowired
-    private MstAuthRepository userRepository;
 
-    /**
-     * ユーザー情報 全検索
-     *
-     * @return 検索結果
-     */
+/**
+* 権限マスタ情報 Repository
+*/
 
+    private final MstAuthRepository mstAuthRepository;
+//
+//    public MstAuthService(MstAuthRepository mstAuthRepository) {
+//        this.mstAuthRepository = mstAuthRepository;
+//    }
+
+    public String searchAll() {
+        return mstAuthRepository.findAll();
+    }
 
 }
