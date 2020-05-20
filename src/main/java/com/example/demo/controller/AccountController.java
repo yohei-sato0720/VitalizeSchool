@@ -12,10 +12,14 @@ import com.example.demo.services.AccountFeatureService;
 @RequiredArgsConstructor
 public class AccountController {
 
+	private final AccountFeatureService accountFeatureService;
+
 	/** to 口座機能 一覧画面表示*/
     @RequestMapping(value = "account/list", method = RequestMethod.GET)
     public String list(Model model) {
-        model.addAttribute("message", "sum");
+    	String text = "ABC";
+    	String returnText = accountFeatureService.getText(text);
+        model.addAttribute("message", returnText);
         return "account/list";
     }
 
