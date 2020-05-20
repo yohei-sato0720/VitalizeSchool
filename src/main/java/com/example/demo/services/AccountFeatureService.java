@@ -7,4 +7,9 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class AccountFeatureService {
 
+	public String getText(String text){
+		String returnText = text + "abc" + "宮垣さん";
+	    return returnText;
+	}
+
 }
