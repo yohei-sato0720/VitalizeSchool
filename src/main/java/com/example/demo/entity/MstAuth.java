@@ -1,4 +1,5 @@
 package com.example.demo.entity;
+
 import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Column;
@@ -8,11 +9,16 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
+
 /**
  * 権限マスタ情報 Entity
  */
 @Entity
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name="mst_auth")
 public class MstAuth implements Serializable {
     /**
