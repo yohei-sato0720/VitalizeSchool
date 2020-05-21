@@ -11,11 +11,5 @@ import com.example.demo.entity.MstAuth;
  */
 
 @Repository
-public class MstAuthRepository {
-    public String findAll(){
-        String Text = "テスト";
-        return Text ;
-    }
-
-}
+public interface MstAuthRepository extends JpaRepository<MstAuth, Long> {}
 //public interface MstAuthRepository extends JpaRepository<MstAuth, Long> {}

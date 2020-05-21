@@ -25,7 +25,7 @@ private final MstAuthService mstAuthService;
     /** to 権限機能 一覧*/
     @RequestMapping(value = "/mst_auth/list", method = RequestMethod.GET)
     public String displayList(Model model) {
-        String mstAuthlist = mstAuthService.searchAll();
+        List<MstAuth> mstAuthlist = mstAuthService.searchAll();
         model.addAttribute("mstAuthlist", mstAuthlist);
         return "mst_auth/list";
     }
