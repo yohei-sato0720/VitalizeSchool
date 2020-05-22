@@ -12,4 +12,3 @@ import com.example.demo.entity.MstAuth;
 
 @Repository
 public interface MstAuthRepository extends JpaRepository<MstAuth, Long> {}
-//public interface MstAuthRepository extends JpaRepository<MstAuth, Long> {}
