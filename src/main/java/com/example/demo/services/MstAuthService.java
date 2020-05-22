@@ -28,7 +28,7 @@ public class MstAuthService {
 //        this.mstAuthRepository = mstAuthRepository;
 //    }
 
-    public String searchAll() {
+    public List<MstAuth> searchAll() {
         return mstAuthRepository.findAll();
     }
 
