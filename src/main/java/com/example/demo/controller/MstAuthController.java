@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import com.example.demo.entity.MstAuth;
-import com.example.demo.services.MstAuthService;
+import com.example.demo.service.MstAuthService;
 
 @Controller
 public class MstAuthController {
