@@ -6,13 +6,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.example.demo.services.AccountFeatureService;
+import com.example.demo.service.AccountFeatureService;
 
 @Controller
 @RequiredArgsConstructor
 public class AccountController {
 
-	private final AccountFeatureService accountFeatureService;
+	private AccountFeatureService accountFeatureService;
 
 	/** to 口座機能 一覧画面表示*/
     @RequestMapping(value = "account/list", method = RequestMethod.GET)
