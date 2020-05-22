@@ -18,12 +18,13 @@ import com.example.demo.entity.MstAuth;
 import com.example.demo.services.MstAuthService;
 
 @Controller
-@RequiredArgsConstructor
 public class MstAuthController {
 
-private final MstAuthService mstAuthService;
+@Autowired
+private MstAuthService mstAuthService;
+
     /** to 権限機能 一覧*/
-    @RequestMapping(value = "/mst_auth/list", method = RequestMethod.GET)
+    @GetMapping(value = "/mst_auth/list")
     public String displayList(Model model) {
         List<MstAuth> mstAuthlist = mstAuthService.searchAll();
         model.addAttribute("mstAuthlist", mstAuthlist);
