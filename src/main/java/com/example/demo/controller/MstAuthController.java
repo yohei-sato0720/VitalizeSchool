@@ -15,15 +15,16 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import com.example.demo.entity.MstAuth;
-import com.example.demo.services.MstAuthService;
+import com.example.demo.service.MstAuthService;
 
 @Controller
-@RequiredArgsConstructor
 public class MstAuthController {
 
-private final MstAuthService mstAuthService;
+@Autowired
+private MstAuthService mstAuthService;
+
     /** to 権限機能 一覧*/
-    @RequestMapping(value = "/mst_auth/list", method = RequestMethod.GET)
+    @GetMapping(value = "/mst_auth/list")
     public String displayList(Model model) {
         List<MstAuth> mstAuthlist = mstAuthService.searchAll();
         model.addAttribute("mstAuthlist", mstAuthlist);
