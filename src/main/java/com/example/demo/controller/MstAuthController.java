@@ -20,6 +20,9 @@ import com.example.demo.service.MstAuthService;
 @Controller
 public class MstAuthController {
 
+/**
+ * 権限情報 Service
+ */
 @Autowired
 private MstAuthService mstAuthService;
 
@@ -36,20 +39,7 @@ private MstAuthService mstAuthService;
         model.addAttribute("message", "Hello World!!");
         return "mst_auth/view";
     }
-//    /** to 権限機能 削除*/
-//
-//	/** to 権限機能 登録画面表示*/
-//    @RequestMapping(value = "mst_auth/add", method = RequestMethod.GET)
-//    public String add(Model model) {
-//        model.addAttribute("message", "Hello World!!");
-//        return "mst_auth/add";
-//    }
-//
-//	/** to 権限機能 編集画面表示*/
-//    @RequestMapping(value = "mst_auth/edit", method = RequestMethod.GET)
-//    public String edit(Model model) {
-//        model.addAttribute("message", "Hello World!!");
-//        return "mst_auth/edit";
-//    }
+
+
 }
 

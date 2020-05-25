@@ -58,4 +58,10 @@ public class MstAuth implements Serializable {
      */
     @Column(name="delete_date")
     private Date deleteDate;
+
+
+    public String getFirstName() {
+        return statusName;
+    }
+
 }
