@@ -12,7 +12,7 @@ import com.example.demo.service.AccountFeatureService;
 @RequiredArgsConstructor
 public class AccountController {
 
-	private final AccountFeatureService accountFeatureService;
+	private AccountFeatureService accountFeatureService;
 
 	/** to 口座機能 一覧画面表示*/
     @RequestMapping(value = "account/list", method = RequestMethod.GET)
