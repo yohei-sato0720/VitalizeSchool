@@ -11,18 +11,18 @@ import com.example.demo.repository.MstAuthRepository;
 import com.example.demo.entity.MstAuth;
 
 /**
- * 権限マスタ一覧情報 Service
+ * 権限一覧情報 Service
  */
 @Service
 @Transactional(rollbackOn = Exception.class)
 public class MstAuthService {
 
 /**
-* 権限マスタ情報 Repository
+* 権限情報 Repository
 */
 @Autowired
 private MstAuthRepository mstAuthRepository;
-
+    // 権限の内容を全検索
     public List<MstAuth> searchAll() {
         return mstAuthRepository.findAll();
     }
