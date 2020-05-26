@@ -61,23 +61,22 @@
                   <thead>
                   <tr>
                     <th class="text-center"></th>
-                    <th class="text-center" data-sort-col="user_privilege">authid</th>
-                    <th class="text-center" data-sort-col="user_privilege">status</th>
-                    <th class="text-center" data-sort-col="user_privilege">function_status</th>
-<!--                    <th class="text-center" data-sort-col="user_privilege">機能ステータス</th>-->
+                    <th class="text-center" data-sort-col="user_privilege">ユーザーID</th>
+                    <th class="text-center" data-sort-col="user_privilege">ステータス</th>
+                    <th class="text-center" data-sort-col="user_privilege">機能ステータス</th>
                   </tr>
                   </thead>
                   <tbody>
-<!--                  <tr th:each="mstAuth : ${mstAuthlist}" th:object="${mstAuth}">-->
+                  <!--<tr th:each="mstAuth : ${mstAuthlist}" th:object="${mstAuth}">-->
                   <tr th:each="user : ${userlist}" th:object="${user}">
-                    <!--                                          <td class="center"><a th:href="@{/mst_auth/view/{id}(id=*{auth_id})}">詳細</a></td>-->
+                    <!--<td class="center"><a th:href="@{/mst_auth/view/{id}(id=*{auth_id})}">詳細</a></td>-->
                     <td>
                       <span class="input-group-btn">
                         <a class="btn btn-info ml-1 text-center align-middle" th:href="@{/user/view}" role="button">詳細</a>
                       </span>
                     </td>
-                    <td class="text-center align-middle" th:text="*{auth_id}"></td>
-                    <td class="text-center align-middle" th:text="*{status}"></td>
+                    <td class="text-center align-middle" th:text="*{user_id}"></td>
+                    <td class="text-center align-middle" th:text="*{user_code}"></td>
                     <!--<td class="text-center align-middle" th:text="*{status_name}"></td>-->
                     <!--<td class="text-center align-middle" th:text="*{function_status}"></td>-->
                   </tr>
