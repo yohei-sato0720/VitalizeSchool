@@ -10,11 +10,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-<<<<<<< HEAD
-=======
 import java.util.List;
 
->>>>>>> 3165da061e5e65fd0896016775a7422771fb20eb
 @Controller
 public class UserController {
 
