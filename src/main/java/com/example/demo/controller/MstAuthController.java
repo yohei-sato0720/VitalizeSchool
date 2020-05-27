@@ -34,9 +34,10 @@ private MstAuthService mstAuthService;
         return "mst_auth/list";
     }
     /** to 権限機能 詳細画面表示*/
-    @RequestMapping(value = "mst_auth/view", method = RequestMethod.GET)
-    public String view(Model model) {
-        model.addAttribute("message", "Hello World!!");
+    @GetMapping("/mst_auth/{authId}")
+    public String displayView(@PathVariable Long authId, Model model) {
+        MstAuth mstAuth = mstAuthService.findById(authId);
+        model.addAttribute("mstAuthRequest", mstAuth);
         return "mst_auth/view";
     }
 

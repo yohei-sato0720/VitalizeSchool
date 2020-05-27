@@ -22,22 +22,27 @@
               <div class="card">
                 <div class="card-body"style="width:40rem;">
                   <div class="center-block">
-                    <table th:object="${userRequest}">
+                    <table th:object="${mstAuthRequest}">
                       <tr>
-                        <th class="cell_title">権限</th>
-                      </tr>
-                      <tr>
-                        <th class="cell_title">管理権限ステータス</th>
+                        <th class="cell_title">権限ID</th>
                         <th class="cell_required"></th>
+                        <td th:text="*{mstAuth.authId}"></td>
                       </tr>
-                      <tr>
-                        <th class="cell_title">管理権限名</th>
-                        <th class="cell_required"></th>
-                      </tr>
-                      <tr>
-                        <th class="cell_title">機能ステータス</th>
-                        <th class="cell_required"></th>
-                      </tr>
+<!--                      <tr>-->
+<!--                        <th class="cell_title">管理権限ステータス</th>-->
+<!--                        <th class="cell_required"></th>-->
+<!--                        <td th:text="*{status}"></td>-->
+<!--                      </tr>-->
+<!--                      <tr>-->
+<!--                        <th class="cell_title">管理権限名</th>-->
+<!--                        <th class="cell_required"></th>-->
+<!--                        <td th:text="*{statusName}"></td>-->
+<!--                      </tr>-->
+<!--                      <tr>-->
+<!--                        <th class="cell_title">機能ステータス</th>-->
+<!--                        <th class="cell_required"></th>-->
+<!--                        <td th:text="*{functionStatus}"></td>-->
+<!--                      </tr>-->
                     </table>
                   </div>
                 </div>
