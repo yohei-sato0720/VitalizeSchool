@@ -1,66 +1,34 @@
 <!DOCTYPE html>
-<html class="no-js" xmlns:th="http://www.thymeleaf.org" th:fragment="commons (title,body)">
-<head>
-  <meta charset="utf-8">
-  <title>VitalizeBank</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <div th:replace="commons/header :: header"></div>
-</head>
-<ul class="list-group list-group-horizontal">
-  <aside>
-    <div th:replace="commons/sidebar :: sidebar"></div>
-  </aside><br/>
-  <main role="main" class="col-md-12 col-lg-11 px-5 ml-sm-auto">
-    <div class="col-lg-12">
-      <div class="card">
-        <div class="text-center">
-          <div class="card-body">
-            <div class="d-sm-flex justify-content-between align-items-center">
-              <h4 class="header-title">口座  詳細</h4>
-            </div><br/>
-            <div class="row">
-              <div class="card">
-                <div class="card-body"style="width:40rem;">
-                  <div class="center-block">
-                    <table>
-                      <tr>
-                        <th class="cell_title">口座番号</th>
-                        <th class="cell_required"></th>
-                      </tr>
-                      <tr>
-                        <th class="cell_title">顧客ID</th>
-                        <th class="cell_required"></th>
-                      </tr>
-                      <tr>
-                        <th class="cell_title">支店コード</th>
-                        <th class="cell_required"></th>
-                      </tr>
-                      <tr>
-                        <th class="cell_title">口座開設日時</th>
-                        <th class="cell_required"></th>
-                      </tr>
-                    </table>
-                  </div>
-                </div>
-              </div>
-            </div><br/>
-            <div class="row">
-              <div class="btn_area_center">
-	            <a class="btn btn-secondary text-center align-middle" th:href="@{/account/list}" role="button">戻る</a>
-              </div>
-            </div>
-              </body>
-            </div>
-          </div>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8" />
+	<title>VitalizeBank</title>
+	<div th:replace="commons/header :: header"></div>
+    <link rel="stylesheet" href="/css/bootstrap.css" />
+    <script src="/js/jquery.js"></script>
+    <script src="/js/bootstrap.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>口座 詳細</h1>
+      <div th:object="${account}">
+        <input type="hidden" th:value="*{accountId}">
+        <div>
+          <label>口座番号</label>
+          <p th:text="*{accountNumber}"></p>
+        </div>
+        <div>
+          <label>顧客ID</label>
+          <p th:text="*{cliantId}"></p>
+        </div>
+        <div>
+          <label>支店コード</label>
+          <p th:text="*{branchCode}"></p>
         </div>
       </div>
+      <div>
+        <a class="btn btn-link" href="/account/list">一覧画面へ</a>
+      </div>
     </div>
-  </main>
-</ul>
-<body>
-<div th:replace="commons/footer :: footer"></div>
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
 </html>
