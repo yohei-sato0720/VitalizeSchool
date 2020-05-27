@@ -22,22 +22,22 @@
               <div class="card">
                 <div class="card-body"style="width:40rem;">
                   <div class="center-block">
-                    <table th:object="${userRequest}">
-                      <tr>
-                        <th class="cell_title">権限</th>
-                      </tr>
-                      <tr>
-                        <th class="cell_title">管理権限ステータス</th>
-                        <th class="cell_required"></th>
-                      </tr>
-                      <tr>
-                        <th class="cell_title">管理権限名</th>
-                        <th class="cell_required"></th>
-                      </tr>
-                      <tr>
-                        <th class="cell_title">機能ステータス</th>
-                        <th class="cell_required"></th>
-                      </tr>
+                    <table>
+                      <div th:object="${mstAuth}">
+                        <input type="hidden" th:value="*{authId}">
+                        <div>
+                          <label>口座番号</label>
+                          <p th:text="*{status}"></p>
+                        </div>
+                        <div>
+                          <label>顧客ID</label>
+                          <p th:text="*{statusName}"></p>
+                        </div>
+                        <div>
+                          <label>支店コード</label>
+                          <p th:text="*{functionStatus}"></p>
+                        </div>
+                      </div>
                     </table>
                   </div>
                 </div>

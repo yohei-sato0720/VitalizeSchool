@@ -65,32 +65,20 @@
                                           <td>管理権限ステータス</td>
                                           <td>管理権限名</td>
                                           <td>機能ステータス</td>
+                                          <td>作成日</td>
+                                          <td>更新日</td>
                                       </tr>
-<!--                                      <tr>-->
-<!--                                          <th class="text-center"></th>-->
-<!--                                          <th class="text-center" data-sort-col="user_privilege">権限ID</th>-->
-<!--                                          <th class="text-center" data-sort-col="user_privilege">管理権限ステータス</th>-->
-<!--                                          <th class="text-center" data-sort-col="user_privilege">管理権限名</th>-->
-<!--                                          <th class="text-center" data-sort-col="user_privilege">機能ステータス</th>-->
-<!--                                      </tr>-->
                                       </thead>
                                       <tbody>
                                       <tr th:each="mstAuth : ${mstAuthlist}" th:object="${mstAuth}">
-                                          <td>
-                                              <span class="input-group-btn">
-                                                   <a class="btn btn-info ml-1 text-center align-middle" th:href="@{/mst_auth/view}" role="button">詳細</a>
-                                              </span>
-                                          </td>
-                                          <td class="center" th:text="*{auth_id}"></td>
+                                          <td><a class="view" th:href="@{/mstAuth/{id}(id=*{authId})}" title="View" data-toggle="tooltip">詳細</a></td>
+<!--                                          <td><a class="btn btn-info btn-xs" th:href="@{/mstAuth/{id}(id=*{authId})}">詳細</a></td>-->
+                                          <td class="center" th:text="*{authId}"></td>
                                           <td class="center" th:text="*{status}"></td>
-<!--                                          <td class="center" th:text="*{status_name}"></td>-->
-<!--                                          <td class="center" th:text="*{function_status}"></td>-->
-<!--                                          <td class="center" th:text="${#dates.format(mstAuth.insertDate, 'yyyy/MM/dd')}"></td>-->
-<!--                                          <td class="center" th:text="${#dates.format(mstAuth.updateDate, 'yyyy/MM/dd')}"></td>-->
-<!--                                          <td class="text-center align-middle" th:text="*{auth_id}"></td>-->
-<!--                                          <td class="text-center align-middle" th:text="*{status}"></td>-->
-<!--                                          <td class="text-center align-middle" th:text="*{status_name}"></td>-->
-<!--                                          <td class="text-center align-middle" th:text="*{function_status}"></td>-->
+                                          <td class="center" th:text="*{statusName}"></td>
+                                          <td class="center" th:text="*{functionStatus}"></td>
+                                          <td class="center" th:text="${#dates.format(mstAuth.insertDate, 'yyyy/MM/dd')}"></td>
+                                          <td class="center" th:text="${#dates.format(mstAuth.updateDate, 'yyyy/MM/dd')}"></td>
                                       </tr>
                                       </tbody>
                                   </table>

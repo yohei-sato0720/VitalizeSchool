@@ -23,7 +23,7 @@ public class MstAuth implements Serializable {
     @Id
     @Column(name="auth_id")
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private Long auth_id;
+    private Long authId;
     /**
      * 管理権限ステータス
      */
@@ -47,14 +47,41 @@ public class MstAuth implements Serializable {
     /**
      * 登録日時
      */
-    @Column(name="create_date")
-    private Date createDate;
+    @Column(name="insert_date")
+    private Date insertDate;
     /**
      * 削除日時
      */
     @Column(name="delete_date")
     private Date deleteDate;
 
-    public String getFirstName() { return statusName; }
+    public Long getAuthId() {
+        return authId;
+    }
+
+    public void setAuthId(Long authId) {
+        this.authId = authId;
+    }
+
+    public Integer getStatus() {
+        return status;
+    }
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
+
+    public String getStatusName() {
+        return statusName;
+    }
+    public void setStatusName(String statusName) {
+        this.statusName = statusName;
+    }
+
+    public Integer getFunctionStatus() {
+        return functionStatus;
+    }
+    public void setFunctionStatus(Integer functionStatus) {
+        this.functionStatus = functionStatus;
+    }
 
 }
