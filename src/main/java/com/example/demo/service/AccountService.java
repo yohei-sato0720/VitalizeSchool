@@ -18,6 +18,11 @@ public class AccountService {
         return accountRepository.findAll();
     }
 
+    public List<Account> search(Integer accountNumber, Integer cliantId, String branchCode) {
+		List<Account> result = accountRepository.findAll();
+		return result;
+	}
+
     public Account findOne(Long id) {
         return accountRepository.findById(id).orElse(null);
     }
