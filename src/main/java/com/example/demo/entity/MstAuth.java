@@ -55,6 +55,33 @@ public class MstAuth implements Serializable {
     @Column(name="delete_date")
     private Date deleteDate;
 
-    public String getFirstName() { return statusName; }
+    public Long getAuthId() {
+        return authId;
+    }
+
+    public void setAuthId(Long authId) {
+        this.authId = authId;
+    }
+
+    public Integer getStatus() {
+        return status;
+    }
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
+
+    public String getStatusName() {
+        return statusName;
+    }
+    public void setStatusName(String statusName) {
+        this.statusName = statusName;
+    }
+
+    public Integer getFunctionStatus() {
+        return functionStatus;
+    }
+    public void setFunctionStatus(Integer functionStatus) {
+        this.functionStatus = functionStatus;
+    }
 
 }
