@@ -16,7 +16,7 @@
       <div class="card">
         <div class="card-body">
           <div class="d-sm-flex justify-content-between align-items-center">
-            <h4 class="header-title">社員  一覧</h4>
+            <h4 class="header-title">mst社員  一覧</h4>
             <i data-feather="list"></i>
           </div><br/>
           <div class="row">
@@ -62,23 +62,25 @@
                   <tr>
                     <th class="text-center"></th>
                     <th class="text-center" data-sort-col="user_privilege">ユーザーID</th>
-                    <th class="text-center" data-sort-col="user_privilege">ステータス</th>
-                    <th class="text-center" data-sort-col="user_privilege">機能ステータス</th>
+                    <th class="text-center" data-sort-col="user_privilege">名前</th>
+                    <th class="text-center" data-sort-col="user_privilege">追加日</th>
                   </tr>
                   </thead>
                   <tbody>
                   <!--<tr th:each="mstAuth : ${mstAuthlist}" th:object="${mstAuth}">-->
-                  <tr th:each="user : ${userlist}" th:object="${user}">
+                  <!--<tr th:each="mstUser : ${mstUserlist}" th:object="${mstUser}">-->
+                  <tr th:each="mstuser : ${mstUserlist}" th:object="${mstuser}">
                     <!--<td class="center"><a th:href="@{/mst_auth/view/{id}(id=*{auth_id})}">詳細</a></td>-->
                     <td>
                       <span class="input-group-btn">
-                        <a class="btn btn-info ml-1 text-center align-middle" th:href="@{/user/view}" role="button">詳細</a>
+                        <a class="btn btn-info ml-1 text-center align-middle" th:href="@{/mst_user/view}" role="button">詳細</a>
                       </span>
                     </td>
-                    <td class="text-center align-middle" th:text="*{user_id}"></td>
-                    <td class="text-center align-middle" th:text="*{user_code}"></td>
-                    <!--<td class="text-center align-middle" th:text="*{status_name}"></td>-->
-                    <!--<td class="text-center align-middle" th:text="*{function_status}"></td>-->
+                    <td class="text-center align-middle" th:text="*{mstUserId}"></td>
+                    <td class="text-center align-middle" th:text="*{userName}"></td>
+<!--                    <td class="text-center align-middle" th:text="*{insertDate}"></td>-->
+                    <td class="text-center align-middle" th:text="${#dates.format(mstuser.insertDate, 'yyyy/MM/dd')}"></td>
+
                   </tr>
                   </tbody>
                 </table>
