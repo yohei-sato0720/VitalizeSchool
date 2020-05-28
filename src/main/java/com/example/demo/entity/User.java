@@ -23,37 +23,17 @@ public class User implements Serializable {
   @Id
   @Column(name="user_id")
   @GeneratedValue(strategy=GenerationType.IDENTITY)
-  private Long user_id;
+  private Long userId;
   /**
-   * 社員コード
+   * ユーザー名
    */
-  @Column(name="user_code")
-  private Integer user_code;
+  @Column(name="user_name")
+  private String userName;
   /**
    * パスワード
    */
   @Column(name="password")
   private String password;
-  /**
-   * 支店コード
-   */
-  @Column(name="function_status")
-  private Integer functionStatus;
-  /**
-   * 役職コード
-   */
-  @Column(name="position_code")
-  private String positionCode;
-  /**
-   * 業務コード
-   */
-  @Column(name="business_code")
-  private String businessCode;
-  /**
-   * 管理権限ステータス
-   */
-  @Column(name="effective_date")
-  private String effectiveDate;
   /**
    * 更新日時
    */
@@ -62,8 +42,8 @@ public class User implements Serializable {
   /**
    * 登録日時
    */
-  @Column(name="create_date")
-  private Date createDate;
+  @Column(name="insert_date")
+  private Date insertDate;
   /**
    * 削除日時
    */
