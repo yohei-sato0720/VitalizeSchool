@@ -1,7 +1,7 @@
 package com.example.demo.service;
 
-import com.example.demo.entity.User;
-import com.example.demo.repository.UserRepository;
+import com.example.demo.entity.MstUser;
+import com.example.demo.repository.MstUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,16 +13,16 @@ import java.util.List;
  */
 @Service
 @Transactional(rollbackOn = Exception.class)
-public class UserService {
+public class MstUserService {
 
 /**
 * 権限情報 Repository
 */
 @Autowired
-private UserRepository userRepository;
+private MstUserRepository mstUserRepository;
     // 権限の内容を全検索
-    public List<User> searchAll() {
-        return userRepository.findAll();
+    public List<MstUser> searchAll() {
+        return mstUserRepository.findAll();
     }
 
 }
