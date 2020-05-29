@@ -242,32 +242,40 @@ $(document).ready(function(){
       <div class="table-title">
         <div class="row">
           <div class="col-sm-4">
-            <h2>権限 詳細</h2>
+            <h2>顧客 詳細</h2>
           </div>
         </div>
       </div>
       <div class="col text-center">
         <div class="row">
-          <div th:object="${mstAuth}">
-            <input type="hidden" th:value="*{authId}">
+          <div th:object="${client}">
+            <input type="hidden" th:value="*{clientId}">
             <div>
-              <label>管理権限ステータス</label>
-              <p th:text="*{status}"></p>
+              <label>顧客名</label>
+              <p th:text="*{clientName}"></p>
             </div>
             <div>
-              <label>管理権限名</label>
-              <p th:text="*{statusName}"></p>
+              <label>顧客名フリガナ</label>
+              <p th:text="*{clientNameKana}"></p>
             </div>
             <div>
-              <label>機能ステータス</label>
-              <p th:text="*{functionStatus}"></p>
+              <label>電話番号</label>
+              <p th:text="*{tell}"></p>
+            </div>
+            <div>
+              <label>メールアドレス</label>
+              <p th:text="*{mailAddress}"></p>
+            </div>
+            <div>
+              <label>パスワード</label>
+              <p th:text="*{password}"></p>
             </div>
           </div>
         </div>
       </div>
     </div>
     <div class="btn">
-      <a class="btn btn-info" href="/mst_auth/list">一覧画面</a>
+      <a class="btn btn-info" href="/client/list">一覧画面</a>
     </div>
   </div>
 </div>
