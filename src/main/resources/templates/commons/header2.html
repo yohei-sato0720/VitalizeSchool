@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="">
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -37,17 +37,10 @@
 		margin-right: 10px;
 	}
 	.navbar .navbar-brand {
-		color: #efe5ff;
+		color: #FFFFFF;
 		padding-left: 0;
 		padding-right: 50px;
-		font-size: 24px;
-	}
-	.navbar .navbar-brand:hover, .navbar .navbar-brand:focus {
-		color: #fff;
-	}
-	.navbar .navbar-brand i {
-		font-size: 25px;
-		margin-right: 5px;
+		font-size: 30px;
 	}
 	.search-box {
         position: relative;
@@ -207,44 +200,25 @@
 				<ul class="dropdown-menu">
 					<li><a href="http://localhost:8081/user/list" class="dropdown-item">社員</a></li>
 					<li><a href="http://localhost:8081/mst_auth/list" class="dropdown-item">権限</a></li>
-					<li><a href="http://localhost:8081/mst_auth/list" class="dropdown-item">社員コード</a></li>
 				</ul>
 			</li>
 			<li class="nav-item dropdown">
-				<a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle user-action"><i class="fa fa-building"></i><span>銀行</span></a>
+				<a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle user-action"><i class="fa fa-money"></i><span>顧客</span></a>
 				<ul class="dropdown-menu">
-					<li><a href="http://localhost:8081/user/list" class="dropdown-item">銀行</a></li>
-					<li><a href="http://localhost:8081/mst_auth/list" class="dropdown-item">支店</a></li>
-					<li><a href="http://localhost:8081/mst_auth/list" class="dropdown-item">所属</a></li>
-				</ul>
-			</li>
-			<li class="nav-item dropdown">
-				<a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle user-action"><i class="fa fa-money"></i><span>口座</span></a>
-				<ul class="dropdown-menu">
-					<li><a href="http://localhost:8081/account/list" class="dropdown-item">口座</a></li>
-					<li><a href="http://localhost:8081/mst_auth/list" class="dropdown-item">残高</a></li>
-					<li><a href="http://localhost:8081/mst_auth/list" class="dropdown-item">取引履歴</a></li>
-					<li><a href="http://localhost:8081/mst_auth/list" class="dropdown-item">手数料</a></li>
 					<li><a href="http://localhost:8081/client/list" class="dropdown-item">顧客</a></li>
+					<li><a href="http://localhost:8081/account/list" class="dropdown-item">口座</a></li>
+					<li><a href="http://localhost:8081/mst_auth/list" class="dropdown-item">取引履歴</a></li>
 				</ul>
 			</li>
 			<li class="nav-item dropdown">
 				<a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle user-action"><i class="fa fa-gears"></i><span>システム設定</span></a>
 				<ul class="dropdown-menu">
-					<li><a href="http://localhost:8081/account/list" class="dropdown-item">システム設定</a></li>
 					<li><a href="http://localhost:8081/mst_auth/list" class="dropdown-item">定期実行</a></li>
-				</ul>
-			</li>
-			<li class="nav-item dropdown">
-				<a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle user-action"><i class="fa fa-sliders"></i><span>個人設定</span></a>
-				<ul class="dropdown-menu">
-					<li><a href="http://localhost:8081/account/list" class="dropdown-item">パスワード変更</a></li>
 				</ul>
 			</li>
 			<li class="nav-item dropdown">
 				<a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle user-action"> テストユーザー様 <b class="caret"></b></a>
 				<ul class="dropdown-menu">
-					<li><a href="#" class="dropdown-item"><i class="fa fa-user-o"></i>ユーザー切り替え</a></li>
 					<li><a href="#" class="dropdown-item"><i class="fa fa-calendar-o"></i>入金/出金カレンダー確認</a></li>
 					<li class="divider dropdown-divider"></li>
 					<li><a href="#" class="dropdown-item"><i class="material-icons">&#xE8AC;</i>ログアウト</a></li>
