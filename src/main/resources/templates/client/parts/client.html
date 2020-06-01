@@ -6,10 +6,10 @@
 <body>
 <div th:fragment="InputField" th:remove="tag">
 	<div class="form-group">
-		<input class="form-control" type="number" placeholder="顧客名" required="required" name="cliantName" />
+		<input class="form-control" type="text" placeholder="顧客名" required="required" name="clientName" />
 	</div>
 	<div class="form-group">
-		<input class="form-control" type="text" placeholder="顧客フリガナ" required="required" name="cliantNameKana" />
+		<input class="form-control" type="text" placeholder="顧客フリガナ" required="required" name="clientNameKana" />
 	</div>
 	<div class="form-group">
 		<input class="form-control" type="text" placeholder="電話番号" required="required" name="tell" />
@@ -20,6 +20,12 @@
 	<div class="form-group">
 		<input class="form-control" type="text" placeholder="パスワード" required="required" name="password" />
 	</div>
+<!--	<div class="form-group">-->
+<!--		<input class="form-control" type="number" placeholder="作成者ID" required="required" name="insertUserId" />-->
+<!--	</div>-->
+<!--	<div class="form-group">-->
+<!--		<input class="form-control" type="number" placeholder="更新者ID" required="required" name="updateUserId" />-->
+<!--	</div>-->
 </div>
 </body>
 </html>

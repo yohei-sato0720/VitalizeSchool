@@ -81,14 +81,14 @@ public class Client implements Serializable {
   /**
    * 登録日時
    */
-  @Column(name="insert_date")
+  @Column(name="insert_date", columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
   @Getter
   @Setter
   private Date insertDate;
   /**
    * 更新日時
    */
-  @Column(name="update_date")
+  @Column(name="update_date", columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
   @Getter
   @Setter
   private Date updateDate;
@@ -100,6 +100,15 @@ public class Client implements Serializable {
   @Setter
   private Date deleteDate;
 
-//  public String getFirstName() { return userID; }
+  @PrePersist
+  public void onPrePersist() {
+    setInsertDate(new Date());
+    setUpdateDate(new Date());
+  }
+
+  @PreUpdate
+  public void onPreUpdate() {
+    setUpdateDate(new Date());
+  }
 
 }
