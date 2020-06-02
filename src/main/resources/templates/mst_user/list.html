@@ -66,11 +66,11 @@
         </tr>
         </thead>
         <tbody>
-        <tr th:each="mstuser : ${mstUserlist}" th:object="${mstuser}">
+        <tr th:each="mstUser : ${mstUserlist}" th:object="${mstUser}">
           <td th:text="*{userCode}"></td>
           <td th:text="*{firstName}"></td>
           <td th:text="*{lastName}"></td>
-          <td th:text="${#dates.format(mstuser.insertDate, 'yyyy/MM/dd')}"></td>
+          <td th:text="${#dates.format(mstUser.insertDate, 'yyyy/MM/dd')}"></td>
           <td><a class="view" th:href="@{/mst_user/{id}(id=*{mstUserId})}" title="View" data-toggle="tooltip"><i
             class="material-icons">&#xE417;</i></a></td>
           <td><a class="settings" th:href="@{/mst_user/edit/{id}(id=*{mstUserId})}" title="Settings"
