@@ -15,26 +15,21 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="/css/list.css"/>
-<script type="text/javascript">
-$(document).ready(function(){
-	$('[data-toggle="tooltip"]').tooltip();
-});
-</script>
 </head>
 <body>
 	<div class="container">
-        <div class="table-wrapper">
-            <div class="table-title">
-                <div class="row">
-                    <div class="col-sm-4">
-						<h2>顧客 一覧</h2>
+    <div class="table-wrapper">
+      <div class="table-title">
+        <div class="row">
+          <div class="col-sm-4">
+            <h2>顧客 一覧</h2>
 					</div>
 					<div class="col-sm-8">
 						<a href="/client/add" class="btn btn-primary"><i class="material-icons">&#xE147;</i> <span>顧客登録</span></a>
 					</div>
-                </div>
-            </div>
-            <div class="table-filter">
+        </div>
+      </div>
+      <div class="table-filter">
 <!--             	<form th:action="@{/client/search}" th:method="post"> -->
 				<div class="mb-3">
 					<div class="row">
@@ -69,7 +64,7 @@ $(document).ready(function(){
 				</ul>
 			</div>
 			<table class="table table-bordered">
-                <thead>
+        <thead>
 					<tr class="heading-td">
 						<td>詳細</td>
 						<td>編集</td>
@@ -84,9 +79,9 @@ $(document).ready(function(){
 						<td>作成日</td>
 						<td>更新日</td>
 						<td></td>
-                    </tr>
-                </thead>
-                <tbody>
+          </tr>
+        </thead>
+        <tbody>
 					<tr th:each="client:${clientlist}" th:object="${client}">
 						<td><a class="view" th:href="@{/client/{id}(id=*{clientId})}" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a></td>
 						<td><a class="settings" th:href="@{/client/edit/{id}(id=*{clientId})}" title="Settings" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a></td>
@@ -108,7 +103,7 @@ $(document).ready(function(){
 					</tr>
 				</tbody>
 			</table>
-        </div>
     </div>
+  </div>
 </body>
 </html>
