@@ -25,7 +25,7 @@
             <h2>社員 一覧</h2>
           </div>
           <div class="col-sm-8">
-            <a href="/account/add" class="btn btn-primary"><i class="material-icons">&#xE147;</i> <span>社員登録</span></a>
+            <a href="/mst_user/add" class="btn btn-primary"><i class="material-icons">&#xE147;</i> <span>社員登録</span></a>
           </div>
         </div>
       </div>
@@ -57,8 +57,11 @@
         <thead>
         <tr>
           <th>社員ID</th>
-          <th>社員名</th>
           <th>支店コード</th>
+          <th>支店コード</th>
+          <th>社員名（性）</th>
+          <th>社員名（名）</th>
+
           <th>社員追加日時</th>
           <th>詳細</th>
           <th>編集</th>
@@ -68,7 +71,8 @@
         <tbody>
         <tr th:each="mstuser : ${mstUserlist}" th:object="${mstuser}">
           <td th:text="*{userCode}"></td>
-          <td th:text="*{userName}"></td>
+          <td th:text="*{firstName}"></td>
+          <td th:text="*{lastName}"></td>
           <td th:text="${#dates.format(mstuser.insertDate, 'yyyy/MM/dd')}"></td>
           <td><a class="view" th:href="@{/mst_user/{id}(id=*{mstUserId})}" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a></td>
           <td><a class="settings" th:href="@{/mst_user/edit/{id}(id=*{mstUserId})}" title="Settings" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a></td>
