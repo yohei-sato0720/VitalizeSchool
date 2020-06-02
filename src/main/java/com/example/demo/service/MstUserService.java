@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import java.util.List;
 
-
 @Service
 @Transactional(rollbackOn = Exception.class)
 public class MstUserService {
@@ -16,11 +15,11 @@ public class MstUserService {
   @Autowired
   private MstUserRepository mstUserRepository;
 
-    public List<MstUser> searchAll() {
-          return mstUserRepository.findAll();
-      }
+    public List<MstUser> findAll() {
+      return mstUserRepository.findAll();
+    }
 
-    public List<MstUser> search(Integer userNumber, Integer userName, String branchCode) {
+    public List<MstUser> search(Integer userNumber, String userName, Integer branchCode) {
       List<MstUser> result = mstUserRepository.findAll();
       return result;
     }

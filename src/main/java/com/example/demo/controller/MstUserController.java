@@ -6,9 +6,7 @@ import com.example.demo.service.MstUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -22,7 +20,7 @@ public class MstUserController {
     /** to 社員 一覧画面表示*/
     @GetMapping(value = "/list")
     public String displayList(Model model) {
-      List<MstUser> mstUserlist = mstUserService.searchAll();
+      List<MstUser> mstUserlist = mstUserService.findAll();
       model.addAttribute("mstUserlist", mstUserlist);
       return "mst_user/list";
     }
@@ -40,4 +38,13 @@ public class MstUserController {
       return "mst_user/view";
     }
 
+
+    /** to ユーザー process 登録*/
+    @PostMapping(value = "/add")
+    public String create (@ModelAttribute MstUser mstUser) {
+      mstUser.setInsertUserId(9001);
+      mstUser.setUpdateUserId(9001);
+      mstUserService.save(mstUser);
+      return "redirect:/mst_user/list";
+    }
 }
