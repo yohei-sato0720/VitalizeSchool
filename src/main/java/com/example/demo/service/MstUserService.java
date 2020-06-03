@@ -8,21 +8,32 @@ import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import java.util.List;
 
-/**
- * 権限一覧情報 Service
- */
 @Service
 @Transactional(rollbackOn = Exception.class)
 public class MstUserService {
 
-/**
-* 権限情報 Repository
-*/
-@Autowired
-private MstUserRepository mstUserRepository;
-    // 権限の内容を全検索
-    public List<MstUser> searchAll() {
-        return mstUserRepository.findAll();
-    }
+  @Autowired
+  private MstUserRepository mstUserRepository;
+
+  public List<MstUser> findAll() {
+    return mstUserRepository.findAll();
+  }
+
+  public List<MstUser> search(Integer userNumber, String userName, Integer branchCode) {
+    List<MstUser> result = mstUserRepository.findAll();
+    return result;
+  }
+
+  public MstUser findOne(Long id) {
+    return mstUserRepository.findById(id).orElse(null);
+  }
+
+  public MstUser save(MstUser mstUser) {
+    return mstUserRepository.save(mstUser);
+  }
+
+  public void delete(Long id) {
+    mstUserRepository.deleteById(id);
+  }
 
 }
