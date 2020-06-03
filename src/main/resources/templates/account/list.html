@@ -72,7 +72,7 @@ $(document).ready(function(){
 					<tr th:each="accountlists:${accountlist}" th:object="${accountlists}">
 						<td th:text="*{accountId}"></td>
 						<td th:text="*{accountNumber}"></td>
-						<td th:text="*{cliantId}"></td>
+						<td th:text="*{clientId}"></td>
  						<td th:text="*{branchCode}"></td>
  						<td th:text="*{insertDate}"></td>
 						<td><a class="view" th:href="@{/account/{id}(id=*{accountId})}" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a></td>

@@ -9,8 +9,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
+import javax.persistence.ManyToOne;
 
 /**
  *口座機能 Entity
@@ -31,8 +34,8 @@ public class Account implements Serializable {
     @Column(name = "account_number")
     private Integer accountNumber;
 
-    @Column(name = "cliant_id")
-    private Integer cliantId;
+    @Column(name = "client_id")
+    private Integer clientId;
 
     @Column(name = "branch_code")
     private String branchCode;
@@ -61,11 +64,11 @@ public class Account implements Serializable {
         this.accountNumber = accountNumber;
     }
 
-    public Integer getCliantId() {
-        return cliantId;
+    public Integer getClientId() {
+        return clientId;
     }
-    public void setCliantId(Integer cliantId) {
-        this.cliantId = cliantId;
+    public void setClientId(Integer clientId) {
+        this.clientId = clientId;
     }
 
     public String getBranchCode() {
