@@ -56,4 +56,26 @@ public class MstUserController {
     mstUserService.save(mstUser);
     return "redirect:/mst_user/list";
   }
+
+  /**
+   * to 社員 編集画面表示
+   */
+  @GetMapping("/edit/{id}")
+  public String edit(@PathVariable Long id, Model model) {
+    MstUser mstUser = mstUserService.findOne(id);
+    model.addAttribute("mstUser", mstUser);
+    return "mst_user/edit";
+  }
+
+  /**
+   * to 社員 process 編集
+   */
+  @PostMapping(value = "/edit/{id}")
+  public String update(@PathVariable Long id, @ModelAttribute MstUser mstUser) {
+    mstUser.setInsertUserId(9001);
+    mstUser.setUpdateUserId(9001);
+    mstUserService.save(mstUser);
+    return "redirect:/mst_user/list";
+  }
+
 }
