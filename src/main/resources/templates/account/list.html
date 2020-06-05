@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -35,7 +35,7 @@ $(document).ready(function(){
                 </div>
             </div>
             <div class="table-filter">
-<!--             	<form th:action="@{/account/search}" th:method="post"> -->
+            	<form th:action="@{/account/search}" accept-charset="UTF-8" th:method="post">
 				<div class="mb-3">
 					<div class="row">
 						<div class="form-group col-2">
@@ -43,7 +43,7 @@ $(document).ready(function(){
 							 <input type="text" class="form-control" id="account_number" name="accountNumber" placeholder="テキスト入力欄" th:value="${accountNumber}"/>
 							 <label class="col-form-label col-form-label-sm">顧客ID</label>
 							 <input type="text" class="form-control" id="cliant_id" name="cliantId" placeholder="テキスト入力欄" th:value="${cliantId}"/>
- 							 <label class="col-form-label col-form-label-sm">支店コード</label>
+							 <label class="col-form-label col-form-label-sm">支店コード</label>
 							 <input type="text" class="form-control" id="branch_code" name="branchCode" placeholder="テキスト入力欄" th:value="${branchCode}"/>
 						</div><br/>
  					</div>
@@ -53,7 +53,7 @@ $(document).ready(function(){
 						</div>
 					</div>
 				</div>
-<!-- 				</form>-->
+ 				</form>
 			</div>
             <table class="table table-striped table-hover">
                 <thead>
