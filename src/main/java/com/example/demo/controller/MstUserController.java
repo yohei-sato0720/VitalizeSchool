@@ -70,7 +70,7 @@ public class MstUserController {
   /**
    * to 社員 process 編集
    */
-  @PostMapping(value = "/edit/{id}")
+  @PutMapping(value = "/edit/{id}")
   public String update(@PathVariable Long id, @ModelAttribute MstUser mstUser) {
     mstUser.setInsertUserId(9001);
     mstUser.setUpdateUserId(9001);
