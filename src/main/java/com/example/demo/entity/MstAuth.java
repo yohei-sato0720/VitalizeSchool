@@ -1,16 +1,12 @@
 package com.example.demo.entity;
 
-import java.io.Serializable;
-import java.util.Date;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.AllArgsConstructor;
+
+import javax.persistence.*;
+import java.io.Serializable;
+import java.util.Date;
 
 /**
  * 権限マスタ情報 Entity
@@ -27,7 +23,7 @@ public class MstAuth implements Serializable {
     @Id
     @Column(name="auth_id")
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private Long auth_id;
+    private Long authId;
     /**
      * 管理権限ステータス
      */
@@ -51,17 +47,41 @@ public class MstAuth implements Serializable {
     /**
      * 登録日時
      */
-    @Column(name="create_date")
-    private Date createDate;
+    @Column(name="insert_date")
+    private Date insertDate;
     /**
      * 削除日時
      */
     @Column(name="delete_date")
     private Date deleteDate;
 
+    public Long getAuthId() {
+        return authId;
+    }
 
-    public String getFirstName() {
+    public void setAuthId(Long authId) {
+        this.authId = authId;
+    }
+
+    public Integer getStatus() {
+        return status;
+    }
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
+
+    public String getStatusName() {
         return statusName;
+    }
+    public void setStatusName(String statusName) {
+        this.statusName = statusName;
+    }
+
+    public Integer getFunctionStatus() {
+        return functionStatus;
+    }
+    public void setFunctionStatus(Integer functionStatus) {
+        this.functionStatus = functionStatus;
     }
 
 }

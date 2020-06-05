@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -103,15 +103,15 @@
 </head>
 <body>
 <div class="signup-form">
-	<form th:action="@{/account/add}" th:method="post">
-		<h2>口座 編集</h2>
-		<div th:replace="~{account/parts/account :: InputField}"></div>
+	<form th:action="@{/client/add}" th:method="post">
+		<h2>顧客 登録</h2>
+		<div th:replace="~{client/parts/client :: InputField}"></div>
 		<div class="form-group">
-			<button class="btn btn-success btn-lg btn-block" type="submit">更新</button>
+			<button class="btn btn-success btn-lg btn-block" type="submit">作成</button>
 		</div>
 	</form>
 	<div class="pull-right">
-		<a class="btn btn-info" href="/account/list">一覧画面へ</a>
+		<a class="btn btn-info" href="/client/list">一覧画面へ</a>
 	</div>
 </div>
 </body>

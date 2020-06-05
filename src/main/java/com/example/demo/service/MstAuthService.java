@@ -27,4 +27,9 @@ private MstAuthRepository mstAuthRepository;
         return mstAuthRepository.findAll();
     }
 
+    public MstAuth findOne(Long id) {
+        return mstAuthRepository.findById(id).orElse(null);
+    }
+
+
 }
