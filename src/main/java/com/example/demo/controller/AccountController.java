@@ -3,6 +3,8 @@ package com.example.demo.controller;
 import java.util.List;
 import java.util.Date;
 
+import javax.validation.Valid;
+import org.springframework.validation.BindingResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -59,19 +61,20 @@ public class AccountController {
 
     @PostMapping(value = "/search")
 	public ModelAndView login(ModelAndView mav
-			, @RequestParam("accountNumber") Integer accountNumber, @RequestParam("cliantId") Integer cliantId
+			, @RequestParam("accountNumber") String accountNumber, @RequestParam("cliantId") String cliantId
 			, @RequestParam("branchCode") String branchCode) {
 		mav.addObject("accountNumber", accountNumber);
 		mav.addObject("cliantId", cliantId);
 		mav.addObject("branchCode", branchCode);
 		List<Account> accountlist = accountService.search(accountNumber, cliantId, branchCode);
 		mav.addObject("accountlist", accountlist);
-		return mav;
+        return mav;
 	}
 
 	/** to 口座機能 process 登録*/
     @PostMapping(value = "/add")
-    public String create(@ModelAttribute Account account) {
+    public String create(@Valid @ModelAttribute Account account, BindingResult bindingResult) {
+    	if(bindingResult.hasErrors()) return "account/add";
     	account.setInsertUserId(9001);
     	account.setUpdateUserId(9001);
     	accountService.save(account);
