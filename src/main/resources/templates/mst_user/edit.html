@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8"/>
+  <title>VitalizeBank</title>
+  <div id="header">
+    <div th:replace="commons/header2 :: header"></div>
+  </div>
+  <link rel="stylesheet"
+        href="/css/bootstrap.css"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="/css/list.css"/>
+</head>
+<body>
+<div class="container">
+  <div id="content">
+    <div class="table-wrapper">
+      <form th:action="@{/mst_user/edit/{id}(id=*{mstUserId})}" th:object="${mstUser}" th:method="post">
+        <div class="table-title">
+          <div class="row">
+            <div class="col-sm-4">
+              <h2>社員 編集</h2>
+            </div>
+          </div>
+        </div>
+        <div class="col text-center">
+          <div class="row">
+            <div th:fragment="InputField" th:remove="tag">
+              <div class="form-group">
+                <input class="form-control" type="number" placeholder="社員ID" required="required" name="userCode"/>
+              </div>
+              <div class="form-group">
+                <input class="form-control" type="password" placeholder="パスワード" required="required" name="password"/>
+              </div>
+              <div class="form-group">
+                <input class="form-control" type="text" placeholder="名字" required="required" name="firstName"/>
+              </div>
+              <div class="form-group">
+                <input class="form-control" type="text" placeholder="名前" required="required" name="lastName"/>
+              </div>
+            </div>
+            <div class="form-group">
+              <button class="btn btn-success btn-lg btn-block" type="submit">更新</button>
+            </div>
+      </form>
+    </div>
+  </div>
+</div>
+</div>
+<div class="btn">
+  <a class="btn btn-info" href="/mst_user/list">一覧画面</a>
+</div>
+</div>
+</div>
+</body>
+</html>

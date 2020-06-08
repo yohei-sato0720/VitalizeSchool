@@ -4,6 +4,13 @@ import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Past;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -14,6 +21,11 @@ import lombok.Setter;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
 import javax.persistence.ManyToOne;
+import javax.persistence.*;
+import java.io.Serializable;
+import java.util.ArrayList;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  *口座機能 Entity
@@ -28,76 +40,46 @@ public class Account implements Serializable {
 
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Getter
+    @Setter
     @Column(name = "account_id")
     private Long accountId;
 
+	@Size(max = 7)
+	@NotNull
     @Column(name = "account_number")
+    @Getter
+    @Setter
     private Integer accountNumber;
 
     @Column(name = "client_id")
+    @Getter
+    @Setter
     private Integer clientId;
 
+	@NotEmpty
     @Column(name = "branch_code")
+    @Getter
+    @Setter
     private String branchCode;
 
     @Column(name="insert_date", columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+    @Getter
+    @Setter
     private Date insertDate;
 
     @Column(name = "insert_user_id")
+    @Getter
+    @Setter
     private Integer insertUserId;
 
     @Column(name = "update_user_id")
+    @Getter
+    @Setter
     private Integer updateUserId;
 
-    public Long getAccountId() {
-        return accountId;
-    }
-
-    public void setAccountId(Long accountId) {
-        this.accountId = accountId;
-    }
-
-    public Integer getAccountNumber() {
-        return accountNumber;
-    }
-    public void setAccountNumber(Integer accountNumber) {
-        this.accountNumber = accountNumber;
-    }
-
-    public Integer getClientId() {
-        return clientId;
-    }
-    public void setClientId(Integer clientId) {
-        this.clientId = clientId;
-    }
-
-    public String getBranchCode() {
-        return branchCode;
-    }
-
-    public void setBranchCode(String branchCode) {
-        this.branchCode = branchCode;
-    }
-
-    public Integer getInsertUserId() {
-        return insertUserId;
-    }
-    public void setInsertUserId(Integer insertUserId) {
-        this.insertUserId = insertUserId;
-    }
-
-    public Integer getUpdateUserId() {
-        return updateUserId;
-    }
-    public void setUpdateUserId(Integer updateUserId) {
-        this.updateUserId = updateUserId;
-    }
-
-    public Date getInsertDate() {
-        return insertDate;
-    }
-
-    public void setInsertDate(Date insertDate) {
-        this.insertDate = insertDate;
+    @PrePersist
+    public void onPrePersist() {
+        setInsertDate(new Date());
     }
 }
