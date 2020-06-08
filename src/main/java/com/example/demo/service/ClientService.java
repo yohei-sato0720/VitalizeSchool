@@ -18,7 +18,7 @@ public class ClientService {
         return clientRepository.findAll();
     }
 
-    public List<Client> search(Integer cliantId, Integer cliantName, String cliantNameKana) {
+    public List<Client> search(Integer clientId, Integer cliantName, String cliantNameKana) {
 		List<Client> result = clientRepository.findAll();
 		return result;
 	}

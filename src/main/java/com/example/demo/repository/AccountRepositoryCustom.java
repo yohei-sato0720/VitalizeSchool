@@ -8,5 +8,5 @@ import java.util.List;
 
 @Repository
 public interface AccountRepositoryCustom {
-	public List<Account> search(String accountNumber, String cliantId, String branchCode);
+	public List<Account> search(String accountNumber, String clientId, String branchCode);
 }

@@ -61,12 +61,12 @@ public class AccountController {
 
     @PostMapping(value = "/search")
 	public ModelAndView login(ModelAndView mav
-			, @RequestParam("accountNumber") String accountNumber, @RequestParam("cliantId") String cliantId
+			, @RequestParam("accountNumber") String accountNumber, @RequestParam("clientId") String clientId
 			, @RequestParam("branchCode") String branchCode) {
 		mav.addObject("accountNumber", accountNumber);
-		mav.addObject("cliantId", cliantId);
+		mav.addObject("clientId", clientId);
 		mav.addObject("branchCode", branchCode);
-		List<Account> accountlist = accountService.search(accountNumber, cliantId, branchCode);
+		List<Account> accountlist = accountService.search(accountNumber, clientId, branchCode);
 		mav.addObject("accountlist", accountlist);
         return mav;
 	}
