@@ -19,11 +19,11 @@ public class MstUser implements Serializable {
    * 社員ID
    */
   @Id
-  @Column(name = "mst_user_id")
+  @Column(name = "id")
   @GeneratedValue(strategy = GenerationType.IDENTITY)
 
 
-  private Long mstUserId;
+  private Long Id;
 
   /**
    * 社員　名字
@@ -109,10 +109,10 @@ public class MstUser implements Serializable {
   @Column(name = "delete_date")
   private Date deleteDate;
 
-  private int insertmstUserId;
+  private int insertId;
 
-  public void setInsertmstUserId(int insertmstUserId) {
-    this.insertmstUserId = insertmstUserId;
+  public void setInsertId(int inserId) {
+    this.insertId = insertId;
   }
 
   @PrePersist
