@@ -88,17 +88,17 @@ $(document).ready(function(){
 			</thead>
 			<tbody>
 			<tr th:each="accountlists:${accountlist}" th:object="${accountlists}">
-				<td th:text="*{accountId}"></td>
+				<td th:text="*{id}"></td>
 				<td th:text="*{accountNumber}"></td>
 				<td th:text="*{clientId}"></td>
 				<td th:text="*{branchCode}"></td>
 				<td th:text="*{insertDate}"></td>
-				<td><a class="view" th:href="@{/account/{id}(id=*{accountId})}" title="View" data-toggle="tooltip"><i
+				<td><a class="view" th:href="@{/account/{id}(id=*{id})}" title="View" data-toggle="tooltip"><i
 					class="material-icons">&#xE417;</i></a></td>
-				<td><a class="settings" th:href="@{/account/edit/{id}(id=*{accountId})}" title="Settings"
+				<td><a class="settings" th:href="@{/account/edit/{id}(id=*{id})}" title="Settings"
 							 data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a></td>
 				<td>
-					<form th:action="@{/account/{id}(id=*{accountId})}" th:method="delete">
+					<form th:action="@{/account/{id}(id=*{id})}" th:method="delete">
 						<input class="btn btn-danger btn-xs" type="submit" value="削除"/>
 					</form>
 				</td>

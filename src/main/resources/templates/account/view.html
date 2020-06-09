@@ -12,7 +12,7 @@
     <div class="container">
       <h1>口座 詳細</h1>
       <div th:object="${account}">
-        <input type="hidden" th:value="*{accountId}">
+        <input type="hidden" th:value="*{id}">
         <div>
           <label>口座番号</label>
           <p th:text="*{accountNumber}"></p>
