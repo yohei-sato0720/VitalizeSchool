@@ -43,8 +43,8 @@ $(document).ready(function(){
 							<input type="text" class="form-control" id="account_number" name="accountNumber" placeholder="テキスト入力欄"
 										 th:value="${accountNumber}"/>
 							<label class="col-form-label col-form-label-sm">顧客ID</label>
-							<input type="text" class="form-control" id="client_id" name="clientId" placeholder="テキスト入力欄"
-										 th:value="${clientId}"/>
+							<input type="text" class="form-control" id="id" name="clientId" placeholder="テキスト入力欄"
+										 th:value="${id}"/>
 							<label class="col-form-label col-form-label-sm">支店コード</label>
 							<input type="text" class="form-control" id="branch_code" name="branchCode" placeholder="テキスト入力欄"
 										 th:value="${branchCode}"/>
@@ -90,7 +90,7 @@ $(document).ready(function(){
 			<tr th:each="accountlists:${accountlist}" th:object="${accountlists}">
 				<td th:text="*{id}"></td>
 				<td th:text="*{accountNumber}"></td>
-				<td th:text="*{clientId}"></td>
+				<td th:text="*{id}"></td>
 				<td th:text="*{branchCode}"></td>
 				<td th:text="*{insertDate}"></td>
 				<td><a class="view" th:href="@{/account/{id}(id=*{id})}" title="View" data-toggle="tooltip"><i
