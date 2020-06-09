@@ -23,12 +23,12 @@ public class AccountRepositoryCustomImpl implements AccountRepositoryCustom {
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<Account> search(String accountNumber, String cliantId, String branchCode) {
+	public List<Account> search(String accountNumber, String clientId, String branchCode) {
 		StringBuilder sql = new StringBuilder();
 		sql.append("SELECT a.account_number,a.cliant_id,a.branch_code From Account a WHERE ");
 		boolean andFlg = false;
 		boolean accountNumberFlg = false;
-		boolean cliantIdFlg = false;
+		boolean clientIdFlg = false;
 		boolean branchCodeFlg = false;
 
 		if (!"".equals(accountNumber) && accountNumber != null) {
@@ -37,10 +37,10 @@ public class AccountRepositoryCustomImpl implements AccountRepositoryCustom {
 			andFlg = true;
 		}
 
-		if (!"".equals(cliantId) && cliantId != null) {
+		if (!"".equals(clientId) && clientId != null) {
 			if (andFlg) sql.append(" AND ");
-			sql.append(" a.cliant_id LIKE :cliantId ");
-			cliantIdFlg = true;
+			sql.append(" a.cliant_id LIKE :clientId ");
+			clientIdFlg = true;
 			andFlg = true;
 		}
 
@@ -66,7 +66,7 @@ public class AccountRepositoryCustomImpl implements AccountRepositoryCustom {
 //		}
 		Query query = manager.createNativeQuery(sql.toString());
 		if (accountNumberFlg) query.setParameter("accountNumber", "%" + accountNumber + "%");
-		if (cliantIdFlg) query.setParameter("cliantId", "%" + cliantId + "%");
+		if (clientIdFlg) query.setParameter("clientId", "%" + clientId + "%");
 		if (branchCodeFlg) query.setParameter("branchCode", "%" + branchCode + "%");
 		return query.getResultList();
 	}

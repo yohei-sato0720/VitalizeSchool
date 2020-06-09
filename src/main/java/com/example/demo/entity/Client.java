@@ -3,12 +3,16 @@ package com.example.demo.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.AccessLevel;
+import java.util.ArrayList;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 import lombok.Getter;
 import lombok.Setter;
+import java.util.List;
+import javax.persistence.OneToMany;
 
 /**
  * 情報 Entity
@@ -28,6 +32,14 @@ public class Client implements Serializable {
   @Getter
   @Setter
   private Long clientId;
+
+  // setter メソッドの未定義化
+  @Setter(AccessLevel.NONE)
+  // 一対多の関連
+  @OneToMany(fetch = FetchType.EAGER, cascade= CascadeType.ALL)
+  @JoinColumn(name = "client_id")
+  private List<Account> AccountList = new ArrayList<>();
+
   /**
    * 顧客名
    */
