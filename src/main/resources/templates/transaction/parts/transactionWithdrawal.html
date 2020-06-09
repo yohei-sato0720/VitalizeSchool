@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <div th:fragment="InputField" th:remove="tag">
+      <div class="form-group">
+        <input class="form-control" type="number" placeholder="出金" required="required" name="amount" />
+      </div>
+    </div>
+  </body>
+</html>

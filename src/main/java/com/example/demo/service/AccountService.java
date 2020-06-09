@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.demo.entity.Account;
 import com.example.demo.repository.AccountRepository;
+import com.example.demo.repository.AccountRepositoryCustom;
 
 @Service
 public class AccountService {
@@ -14,12 +15,20 @@ public class AccountService {
 	@Autowired
     private AccountRepository accountRepository;
 
+    @Autowired
+    AccountRepositoryCustom accountRepositoryCustom;
+
     public List<Account> findAll() {
         return accountRepository.findAll();
     }
 
-    public List<Account> search(Integer accountNumber, Integer cliantId, String branchCode) {
-		List<Account> result = accountRepository.findAll();
+	public List<Account> search(String accountNumber, String clientId, String branchCode) {
+		List<Account> result;
+		if ("".equals(accountNumber) && "".equals(clientId) && "".equals(branchCode)) {
+			result = accountRepository.findAll();
+		} else {
+			result = accountRepositoryCustom.search(accountNumber, clientId, branchCode);
+		}
 		return result;
 	}
 
