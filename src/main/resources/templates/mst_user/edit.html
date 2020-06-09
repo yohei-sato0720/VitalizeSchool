@@ -20,7 +20,7 @@
 <div class="container">
   <div id="content">
     <div class="table-wrapper">
-      <form th:action="@{/mst_user/edit/{id}(id=*{mstUserId})}" th:object="${mstUser}" th:method="post">
+      <form th:action="@{/mst_user/edit/{id}(id=*{id})}" th:object="${mstUser}" th:method="post">
         <div class="table-title">
           <div class="row">
             <div class="col-sm-4">
