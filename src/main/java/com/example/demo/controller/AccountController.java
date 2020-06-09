@@ -84,7 +84,7 @@ public class AccountController {
     public String update(@PathVariable Long id, @ModelAttribute Account account) {
     	account.setInsertUserId(9001);
     	account.setUpdateUserId(9001);
-    	account.setAccountId(id);
+    	account.setId(id);
         accountService.save(account);
         return "redirect:/account/list";
     }

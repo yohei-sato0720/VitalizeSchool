@@ -35,7 +35,7 @@
 					<div class="row">
 						<div class="form-group col-2">
 							 <label class="col-form-label col-form-label-sm">顧客</label>
-							 <input type="text" class="form-control" id="client_id" name="clientId" placeholder="テキスト入力欄" th:value="${clientId}"/>
+							 <input type="text" class="form-control" id="id" name="clientId" placeholder="テキスト入力欄" th:value="${id}"/>
 							 <label class="col-form-label col-form-label-sm">顧客名</label>
 							 <input type="text" class="form-control" id="cliant_name" name="cliantName" placeholder="テキスト入力欄" th:value="${cliantName}"/>
  							 <label class="col-form-label col-form-label-sm">顧客名フリガナ</label>
@@ -83,9 +83,9 @@
         </thead>
         <tbody>
 					<tr th:each="client:${clientlist}" th:object="${client}">
-						<td><a class="view" th:href="@{/client/{id}(id=*{clientId})}" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a></td>
-						<td><a class="settings" th:href="@{/client/edit/{id}(id=*{clientId})}" title="Settings" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a></td>
-						<td th:text="*{clientId}"></td>
+						<td><a class="view" th:href="@{/client/{id}(id=*{id})}" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a></td>
+						<td><a class="settings" th:href="@{/client/edit/{id}(id=*{id})}" title="Settings" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a></td>
+						<td th:text="*{id}"></td>
 						<td th:text="*{clientName}"></td>
 						<td th:text="*{clientNameKana}"></td>
  						<td th:text="*{tell}"></td>
@@ -96,7 +96,7 @@
 						<td class="center" th:text="${#dates.format(client.insertDate, 'yyyy/MM/dd')}"></td>
 						<td class="center" th:text="${#dates.format(client.updateDate, 'yyyy/MM/dd')}"></td>
 						<td>
-							<form th:action="@{/client/{id}(id=*{clientId})}" th:method="delete">
+							<form th:action="@{/client/{id}(id=*{id})}" th:method="delete">
 								<input class="btn btn-danger btn-xs" type="submit" name="delete" value="削除"/>
 							</form>
 					 	</td>

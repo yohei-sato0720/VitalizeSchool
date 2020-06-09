@@ -36,7 +36,7 @@
                 <div class="row">
                     <div class="form-group col-2">
                         <label class="col-form-label col-form-label-sm">権限ID</label>
-                        <input type="text" class="form-control" id="auth_id" name="authId" placeholder="テキスト入力欄" th:value="${authId}"/>
+                        <input type="text" class="form-control" id="id" name="id" placeholder="テキスト入力欄" th:value="${id}"/>
                         <label class="col-form-label col-form-label-sm">ステータス</label>
                         <input type="text" class="form-control" id="status" name="status" placeholder="テキスト入力欄" th:value="${status}"/>
                     </div><br/>
@@ -76,9 +76,9 @@
             </thead>
             <tbody>
             <tr th:each="mstAuth : ${mstAuthlist}" th:object="${mstAuth}">
-<!--                    <td><a class="btn btn-info btn-xs" th:href="@{/mst_auth/{id}(id=*{authId})}" >詳細画面</a></td>-->
-                <td><a class="view" th:href="@{/mst_auth/{id}(id=*{authId})}" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a></td>
-                <td class="center" th:text="*{authId}"></td>
+<!--                    <td><a class="btn btn-info btn-xs" th:href="@{/mst_auth/{id}(id=*{id})}" >詳細画面</a></td>-->
+                <td><a class="view" th:href="@{/mst_auth/{id}(id=*{id})}" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a></td>
+                <td class="center" th:text="*{id}"></td>
                 <td class="center" th:text="*{status}"></td>
                 <td class="center" th:text="*{statusName}"></td>
                 <td class="center" th:text="*{functionStatus}"></td>

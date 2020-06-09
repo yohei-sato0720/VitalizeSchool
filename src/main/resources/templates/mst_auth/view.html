@@ -34,7 +34,7 @@
       <div class="col text-center">
         <div class="row">
           <div th:object="${mstAuth}">
-            <input type="hidden" th:value="*{authId}">
+            <input type="hidden" th:value="*{id}">
             <div>
               <label>管理権限ステータス</label>
               <p th:text="*{status}"></p>
