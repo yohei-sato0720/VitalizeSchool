@@ -43,7 +43,7 @@ public class Account implements Serializable {
     @Getter
     @Setter
     @Column(name = "account_id")
-    private Long accountId;
+    private Long id;
 
 	@Size(max = 7)
 	@NotNull

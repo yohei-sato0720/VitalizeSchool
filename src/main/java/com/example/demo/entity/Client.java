@@ -27,17 +27,17 @@ public class Client implements Serializable {
    * 顧客ID
    */
   @Id
-  @Column(name="client_id")
+  @Column(name="id")
   @GeneratedValue(strategy=GenerationType.IDENTITY)
   @Getter
   @Setter
-  private Long clientId;
+  private Long id;
 
   // setter メソッドの未定義化
   @Setter(AccessLevel.NONE)
   // 一対多の関連
   @OneToMany(fetch = FetchType.EAGER, cascade= CascadeType.ALL)
-  @JoinColumn(name = "client_id")
+  @JoinColumn(name = "id")
   private List<Account> AccountList = new ArrayList<>();
 
   /**

@@ -23,7 +23,7 @@ public class MstAuth implements Serializable {
     @Id
     @Column(name="auth_id")
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private Long authId;
+    private Long id;
     /**
      * 管理権限ステータス
      */
@@ -56,11 +56,11 @@ public class MstAuth implements Serializable {
     private Date deleteDate;
 
     public Long getAuthId() {
-        return authId;
+        return id;
     }
 
-    public void setAuthId(Long authId) {
-        this.authId = authId;
+    public void setAuthId(Long id) {
+        this.id = id;
     }
 
     public Integer getStatus() {

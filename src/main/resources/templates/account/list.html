@@ -23,9 +23,9 @@
 				<div class="col-sm-4">
 					<h2>口座機能 一覧</h2>
 				</div>
-				<div class="col-sm-8">
-					<a href="/account/add" class="btn btn-primary"><i class="material-icons">&#xE147;</i> <span>口座登録</span></a>
-				</div>
+<!--				<div class="col-sm-8">-->
+<!--					<a href="/account/add" class="btn btn-primary"><i class="material-icons">&#xE147;</i> <span>口座登録</span></a>-->
+<!--				</div>-->
 			</div>
 		</div>
 		<div class="table-filter">
@@ -37,8 +37,8 @@
 							<input type="text" class="form-control" id="account_number" name="accountNumber" placeholder="テキスト入力欄"
 										 th:value="${accountNumber}"/>
 							<label class="col-form-label col-form-label-sm">顧客ID</label>
-							<input type="text" class="form-control" id="client_id" name="clientId" placeholder="テキスト入力欄"
-										 th:value="${clientId}"/>
+							<input type="text" class="form-control" id="id" name="clientId" placeholder="テキスト入力欄"
+										 th:value="${id}"/>
 							<label class="col-form-label col-form-label-sm">支店コード</label>
 							<input type="text" class="form-control" id="branch_code" name="branchCode" placeholder="テキスト入力欄"
 										 th:value="${branchCode}"/>
@@ -72,31 +72,25 @@
 			<tr class="heading-td">
 				<td>#</td>
 				<td>口座番号</td>
-				<td>顧客ID</td>
 				<td>支店コード</td>
 				<td>口座開設日時</td>
 				<td>詳細</td>
-				<td>編集</td>
 				<td></td>
 			</tr>
 			</thead>
 			<tbody>
 			<tr th:each="accountlists:${accountlist}" th:object="${accountlists}">
-				<td th:text="*{accountId}"></td>
+				<td th:text="*{id}"></td>
 				<td th:text="*{accountNumber}"></td>
-				<td th:text="*{clientId}"></td>
 				<td th:text="*{branchCode}"></td>
 				<td th:text="*{insertDate}"></td>
-				<td><a class="view" th:href="@{/account/{id}(id=*{accountId})}" title="View" data-toggle="tooltip"><i
+				<td><a class="view" th:href="@{/account/{id}(id=*{id})}" title="View" data-toggle="tooltip"><i
 					class="material-icons">&#xE417;</i></a></td>
-				<td><a class="settings" th:href="@{/account/edit/{id}(id=*{accountId})}" title="Settings"
-							 data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a></td>
 				<td>
-					<form th:action="@{/account/{id}(id=*{accountId})}" th:method="delete">
+					<form th:action="@{/account/{id}(id=*{id})}" th:method="delete">
 						<input class="btn btn-danger btn-xs" type="submit" value="削除"/>
 					</form>
 				</td>
-				<td>
 			</tr>
 			</tbody>
 		</table>
