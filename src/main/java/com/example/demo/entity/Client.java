@@ -33,12 +33,6 @@ public class Client implements Serializable {
   @Setter
   private Long clientId;
 
-  // setter メソッドの未定義化
-  @Setter(AccessLevel.NONE)
-  // 一対多の関連
-  @OneToMany(fetch = FetchType.EAGER, cascade= CascadeType.ALL)
-  @JoinColumn(name = "client_id")
-  private List<Account> AccountList = new ArrayList<>();
 
   /**
    * 顧客名

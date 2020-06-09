@@ -59,12 +59,12 @@ public class ClientController {
 
 //    @PostMapping(value = "/search")
 //	public ModelAndView login(ModelAndView mav
-//			, @RequestParam("clientNumber") Integer clientNumber, @RequestParam("cliantId") Integer cliantId
+//			, @RequestParam("clientNumber") Integer clientNumber, @RequestParam("clientId") Integer clientId
 //			, @RequestParam("branchCode") String branchCode) {
 //		mav.addObject("clientNumber", clientNumber);
-//		mav.addObject("cliantId", cliantId);
+//		mav.addObject("clientId", clientId);
 //		mav.addObject("branchCode", branchCode);
-//		List<Client> clientlist = clientService.search(clientNumber, cliantId, branchCode);
+//		List<Client> clientlist = clientService.search(clientNumber, clientId, branchCode);
 //		mav.addObject("clientlist", clientlist);
 //		return mav;
 //	}
