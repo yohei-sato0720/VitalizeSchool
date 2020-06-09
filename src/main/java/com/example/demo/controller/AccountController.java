@@ -39,9 +39,7 @@ public class AccountController {
 
 	/** to 口座機能 登録画面表示*/
     @GetMapping(value = "/add")
-    public String add(Model model) {
-        return "account/add";
-    }
+    public String add(Model model) { return "account/add"; }
 
 	/** to 口座機能 編集画面表示*/
     @GetMapping("/edit/{id}")
