@@ -32,6 +32,10 @@ public class MstUserService {
     return mstUserRepository.save(mstUser);
   }
 
+//  public MstUser updateMstUser(MstUser mstUser) {
+//    return mstUserRepository().save(mstUser);
+//  }
+
   public void delete(Long id) {
     mstUserRepository.deleteById(id);
   }

@@ -22,12 +22,12 @@ public class AccountService {
         return accountRepository.findAll();
     }
 
-	public List<Account> search(String accountNumber, String cliantId, String branchCode) {
+	public List<Account> search(String accountNumber, String clientId, String branchCode) {
 		List<Account> result;
-		if ("".equals(accountNumber) && "".equals(cliantId) && "".equals(branchCode)) {
+		if ("".equals(accountNumber) && "".equals(clientId) && "".equals(branchCode)) {
 			result = accountRepository.findAll();
 		} else {
-			result = accountRepositoryCustom.search(accountNumber, cliantId, branchCode);
+			result = accountRepositoryCustom.search(accountNumber, clientId, branchCode);
 		}
 		return result;
 	}

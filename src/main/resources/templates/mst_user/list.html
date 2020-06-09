@@ -71,12 +71,12 @@
           <td th:text="*{firstName}"></td>
           <td th:text="*{lastName}"></td>
           <td th:text="${#dates.format(mstUser.insertDate, 'yyyy/MM/dd')}"></td>
-          <td><a class="view" th:href="@{/mst_user/{id}(id=*{mstUserId})}" title="View" data-toggle="tooltip"><i
+          <td><a class="view" th:href="@{/mst_user/{id}(id=*{id})}" title="View" data-toggle="tooltip"><i
             class="material-icons">&#xE417;</i></a></td>
-          <td><a class="settings" th:href="@{/mst_user/edit/{id}(id=*{mstUserId})}" title="Settings"
+          <td><a class="settings" th:href="@{/mst_user/edit/{id}(id=*{id})}" title="Settings"
                  data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a></td>
           <td>
-            <form th:action="@{/mst_user/{id}(id=*{mstUserId})}" th:method="delete">
+            <form th:action="@{/mst_user/{id}(id=*{id})}" th:method="delete">
               <input class="btn btn-danger btn-xs" type="submit" value="削除"/>
             </form>
           </td>
