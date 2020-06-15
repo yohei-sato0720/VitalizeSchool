@@ -100,7 +100,7 @@ public class MstUserController {
   /**
    * to 削除機能　社員一覧画面
    */
-  @PostMapping("id")
+  @PostMapping("{id}")
   public String destroy(@PathVariable Long id) {
     mstUserService.delete(id);
     return "redirect:/mst_user/list";
