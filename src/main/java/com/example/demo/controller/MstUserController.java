@@ -71,6 +71,7 @@ public class MstUserController {
   public String create(@ModelAttribute MstUser mstUser) {
     mstUser.setInsertUserId(9001);
     mstUser.setUpdateUserId(9001);
+    mstUser.setStatus(1);
     mstUserService.save(mstUser);
     return "redirect:/mst_user/list";
   }
