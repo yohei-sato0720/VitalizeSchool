@@ -88,7 +88,7 @@ public class ClientController {
     }
 
     /** to 顧客 削除*/
-    @DeleteMapping("{id}")
+    @PostMapping("{id}")
     public String destroy(@PathVariable Long id) {
     	clientService.delete(id);
         return "redirect:/client/list";
