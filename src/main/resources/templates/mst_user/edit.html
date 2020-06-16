@@ -20,7 +20,7 @@
 <div class="container">
   <div id="content">
     <div class="table-wrapper">
-      <form th:action="@{/mst_user/edit/{id}(id=*{id})}" th:object="${mstUser}" th:method="post">
+      <form th:action="@{/mst_user/add}" th:method="post">
         <div class="table-title">
           <div class="row">
             <div class="col-sm-4">
@@ -38,10 +38,7 @@
                 <input class="form-control" type="password" placeholder="パスワード" required="required" name="password"/>
               </div>
               <div class="form-group">
-                <input class="form-control" type="text" placeholder="名字" required="required" name="firstName"/>
-              </div>
-              <div class="form-group">
-                <input class="form-control" type="text" placeholder="名前" required="required" name="lastName"/>
+                <input class="form-control" type="text" placeholder="社員名" required="required" name="userName"/>
               </div>
             </div>
             <div class="form-group">

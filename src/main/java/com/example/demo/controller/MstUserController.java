@@ -71,6 +71,7 @@ public class MstUserController {
   public String create(@ModelAttribute MstUser mstUser) {
     mstUser.setInsertUserId(9001);
     mstUser.setUpdateUserId(9001);
+    mstUser.setStatus(1);
     mstUserService.save(mstUser);
     return "redirect:/mst_user/list";
   }
@@ -90,8 +91,9 @@ public class MstUserController {
    */
   @PostMapping(value = "/edit/{id}") //PostMappingを使う
   public String update(@PathVariable Long id, @ModelAttribute MstUser mstUser) {
-    mstUser.setInsertId(9001);
-    mstUser.setUpdateId(9001);
+    mstUser.setInsertUserId(9001);
+    mstUser.setUpdateUserId(9001);
+    mstUser.setStatus(1);
     mstUserService.save(mstUser);
     return "redirect:/mst_user/list";
   }
@@ -99,7 +101,7 @@ public class MstUserController {
   /**
    * to 削除機能　社員一覧画面
    */
-  @PostMapping("id")
+  @PostMapping("{id}")
   public String destroy(@PathVariable Long id) {
     mstUserService.delete(id);
     return "redirect:/mst_user/list";
