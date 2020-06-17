@@ -59,6 +59,13 @@ public class Transaction implements Serializable{
      */
     @Column(name="balance")
     private Integer balance;
+
+    /**
+     * 取引日
+     */
+    @Column(name="trading_date")
+    private Date tradingDate;
+
     /**
      * 登録者
      */
