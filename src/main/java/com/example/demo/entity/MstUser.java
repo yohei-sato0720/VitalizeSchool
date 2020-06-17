@@ -80,7 +80,7 @@ public class MstUser implements Serializable {
   /**
    * 登録日時
    */
-  @Column(name = "insert_date", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+  @Column(name = "insert_date", updatable=false)
   private Date insertDate;
 
   /**
