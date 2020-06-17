@@ -21,7 +21,7 @@ public class MstAuth implements Serializable {
      * 権限ID
      */
     @Id
-    @Column(name="auth_id")
+    @Column(name="id")
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
     /**
