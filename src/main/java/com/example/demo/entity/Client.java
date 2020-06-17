@@ -29,87 +29,58 @@ public class Client implements Serializable {
   @Id
   @Column(name="id")
   @GeneratedValue(strategy=GenerationType.IDENTITY)
-  @Getter
-  @Setter
   private Long id;
-
-  // setter メソッドの未定義化
-  @Setter(AccessLevel.NONE)
-  // 一対多の関連
-  @OneToMany(fetch = FetchType.EAGER, cascade= CascadeType.ALL)
-  @JoinColumn(name = "id")
-  private List<Account> AccountList = new ArrayList<>();
 
   /**
    * 顧客名
    */
   @Column(name="client_name")
-  @Getter
-  @Setter
   private String clientName;
   /**
    * 顧客名フリガナ
    */
   @Column(name="client_name_kana")
-  @Getter
-  @Setter
   private String clientNameKana;
   /**
    * 電話番号
    */
   @Column(name="tell")
-  @Getter
-  @Setter
   private String tell;
   /**
    * メールアドレス
    */
   @Column(name="mail_address")
-  @Getter
-  @Setter
   private String mailAddress;
   /**
    * パスワード
    */
   @Column(name="password")
-  @Getter
-  @Setter
   private String password;
   /**
    * 登録者
    */
   @Column(name="insert_user_id")
-  @Getter
-  @Setter
   private Integer insertUserId;
   /**
    * 更新者
    */
   @Column(name="update_user_id")
-  @Getter
-  @Setter
   private Integer updateUserId;
 
   /**
    * 登録日時
    */
-  @Column(name="insert_date", columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
-  @Getter
-  @Setter
+  @Column(name="insert_date", updatable=false)
   private Date insertDate;
   /**
    * 更新日時
    */
-  @Column(name="update_date", columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
-  @Getter
-  @Setter
+  @Column(name="update_date")
   private Date updateDate;
   /**
    * 削除日時
    */
   @Column(name="delete_date")
-  @Getter
-  @Setter
   private Date deleteDate;
 
   @PrePersist
@@ -122,5 +93,6 @@ public class Client implements Serializable {
   public void onPreUpdate() {
     setUpdateDate(new Date());
   }
+
 
 }

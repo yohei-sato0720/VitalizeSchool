@@ -39,5 +39,4 @@ public class MstUserService {
   public void delete(Long id) {
     mstUserRepository.deleteById(id);
   }
-
 }
