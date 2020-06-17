@@ -83,6 +83,7 @@ public class MstUserController {
   public String edit(@PathVariable Long id, Model model) {
     MstUser mstUser = mstUserService.findOne(id);
     model.addAttribute("mstUser", mstUser);
+    model.addAttribute("id", id);
     return "mst_user/edit";
   }
 
