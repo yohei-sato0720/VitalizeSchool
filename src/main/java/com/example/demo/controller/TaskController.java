@@ -14,7 +14,7 @@ public class TaskController {
     @Transactional
     @Scheduled(cron = "${scheduler.cron}", zone = "Asia/Tokyo")
     public void taskCronTimeZone() {
-        System.out.println("こんばんは");
+        System.out.println("頑張ろうww");
     }
 
     public static void main(String[] args) {

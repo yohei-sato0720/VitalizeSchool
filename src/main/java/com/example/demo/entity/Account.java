@@ -42,7 +42,7 @@ public class Account implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Getter
     @Setter
-    @Column(name = "account_id")
+    @Column(name = "id")
     private Long id;
 
 	@Size(max = 7)

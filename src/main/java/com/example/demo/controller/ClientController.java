@@ -57,18 +57,6 @@ public class ClientController {
         return "client/view";
     }
 
-//    @PostMapping(value = "/search")
-//	public ModelAndView login(ModelAndView mav
-//			, @RequestParam("clientNumber") Integer clientNumber, @RequestParam("clientId") Integer clientId
-//			, @RequestParam("branchCode") String branchCode) {
-//		mav.addObject("clientNumber", clientNumber);
-//		mav.addObject("clientId", clientId);
-//		mav.addObject("branchCode", branchCode);
-//		List<Client> clientlist = clientService.search(clientNumber, clientId, branchCode);
-//		mav.addObject("clientlist", clientlist);
-//		return mav;
-//	}
-
 	/** to 顧客 process 登録*/
     @PostMapping(value = "/add")
     public String create(@ModelAttribute Client client) {
@@ -81,7 +69,7 @@ public class ClientController {
 	/** to 顧客 process 編集*/
     @PostMapping(value = "/edit/{id}")
     public String update(@PathVariable Long id, @ModelAttribute Client client) {
-    	client.setInsertUserId(9001);
+        client.setInsertUserId(9001);
     	client.setUpdateUserId(9001);
         clientService.save(client);
         return "redirect:/client/list";
