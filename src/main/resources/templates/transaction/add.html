@@ -7,12 +7,14 @@
 	<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
 	<title>VitalizeBank</title>
 	<div th:replace="commons/header2 :: header"></div>
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/css/bootstrap.css" />
 	<link rel="stylesheet" href="/css/list.css"/>
+	<link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/dark.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
 <div class="container">
@@ -31,9 +33,9 @@
 						<div class="tab-content">
 							<main class="p-3">
 								<!-- タブ -->
-								<ul class="nav nav-tabs">
-									<li class="nav-item">
-										<a href="#photo1" class="nav-link active" data-toggle="tab">お預入れ</a>
+								<ul class="nav nav-tabs centered">
+									<li class="nav-item active">
+										<a href="#photo1" class="nav-link" data-toggle="tab">お預入れ</a>
 									</li>
 									<li class="nav-item">
 										<a href="#photo2" class="nav-link" data-toggle="tab">お引出し</a>
@@ -51,19 +53,52 @@
 										<div th:replace="~{transaction/parts/transactionWithdrawal :: InputField}"></div>
 									</div>
 									<div id="photo3" class="tab-pane">
-										<div th:replace="~{transaction/parts/transactionWithdrawal :: InputField}"></div>
+										<div th:replace="~{transaction/parts/transactionRemittance :: InputField}"></div>
+									</div>
+								</div>
+
+								<div class="tabbable">
+									<ul class="nav tab-group">
+										<li class="active">
+											<a href="#photo4" data-toggle="tab">最短日数</a>
+									   	</li>
+										<li>
+											<a href="#photo5" class="nav-link" data-toggle="tab">日付を指定する</a>
+									   </li>
+									</ul>
+								</div>
+								<!-- タブ -->
+								<div class="tab-content">
+									<div id="photo4" class="tab-pane active">
+										<div th:replace="~{transaction/parts/tradingCalendarNodate :: InputField}"></div>
+									</div>
+									<div id="photo5" class="tab-pane">
+										<div th:replace="~{transaction/parts/tradingCalendar :: InputField}"></div>
 									</div>
 								</div>
 							</main>
-						</div>
-						<div class="form-group">
-							<button class="btn btn-success btn-lg btn-block" type="submit">作成</button>
+								<div class="form-group">
+									<button class="btn btn-primary btn-lg btn-block" type="submit">作成</button>
+								</div>
 						</div>
 					</form>
 				</div>
 			</div>
 		</div>
+		<div class="btn">
+			<a class="btn btn-info" href="/transaction/list">一覧画面へ</a>
+		</div>
 	</div>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ja.js"></script>
+<script>
+    flatpickr.localize(flatpickr.l10ns.ja);
+    flatpickr('#tradingCalendar', {
+        enableTime: true,
+        allowInput: true
+
+    });
+</script>
 </body>
 </html>

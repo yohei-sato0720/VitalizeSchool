@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
-<title>VitalizeBank</title>
-<div th:replace="commons/header2 :: header"></div>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<style type="text/css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+  <title>VitalizeBank</title>
+  <div th:replace="commons/header2 :: header"></div>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <style type="text/css">
 	body{
 		color: #fff;
 /* 		background: #63738a; */
@@ -99,20 +99,21 @@
 	.signup-form form a:hover{
 		text-decoration: underline;
 	}
-</style>
+
+  </style>
 </head>
 <body>
 <div class="signup-form">
-	<form th:action="@{/account/add}" th:method="post">
-		<h2>口座 編集</h2>
-		<div th:replace="~{account/parts/account :: InputField}"></div>
-		<div class="form-group">
-			<button class="btn btn-success btn-lg btn-block" type="submit">更新</button>
-		</div>
-	</form>
-	<div class="pull-right">
-		<a class="btn btn-info" href="/account/list">一覧画面へ</a>
-	</div>
+  <form th:action="@{/account/add}" th:method="post">
+    <h2>口座 編集</h2>
+    <div th:replace="~{account/parts/account :: InputField}"></div>
+    <div class="form-group">
+      <button class="btn btn-success btn-lg btn-block" type="submit">更新</button>
+    </div>
+  </form>
+  <div class="pull-right">
+    <a class="btn btn-info" href="/account/list">一覧画面へ</a>
+  </div>
 </div>
 </body>
 </html>

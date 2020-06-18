@@ -2508,6 +2508,7 @@ legend {
 label {
   display: inline-block;
   max-width: 100%;
+  margin-top: 5px;
   margin-bottom: 5px;
   font-weight: bold;
 }
@@ -2629,6 +2630,7 @@ input[type="search"] {
   }
 }
 .form-group {
+  margin-top: 15px;
   margin-bottom: 15px;
 }
 .radio,
@@ -4593,7 +4595,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   border-color: #080808;
 }
 .navbar-inverse .navbar-brand {
-  color: #9d9d9d;
+  color: #fff;
 }
 .navbar-inverse .navbar-brand:hover,
 .navbar-inverse .navbar-brand:focus {

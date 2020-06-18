@@ -19,23 +19,15 @@ public class MstUser implements Serializable {
    * 社員ID
    */
   @Id
-  @Column(name = "mst_user_id")
+  @Column(name = "id")
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-
-
-  private Long mstUserId;
+  private Long Id;
 
   /**
-   * 社員　名字
+   * 社員名
    */
-  @Column(name = "first_name")
-  private String firstName;
-
-  /**
-   * 社員　名前
-   */
-  @Column(name = "last_name")
-  private String lastName;
+  @Column(name = "user_name")
+  private String userName;
 
   /**
    * 社員コード
@@ -74,12 +66,6 @@ public class MstUser implements Serializable {
   private String businessCode;
 
   /**
-   * 管理権限ステータス
-   */
-  @Column(name = "effective_date")
-  private String effectiveDate;
-
-  /**
    * 登録者
    */
   @Column(name = "insert_user_id")
@@ -94,7 +80,7 @@ public class MstUser implements Serializable {
   /**
    * 登録日時
    */
-  @Column(name = "insert_date", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+  @Column(name = "insert_date", updatable=false)
   private Date insertDate;
 
   /**
@@ -109,10 +95,10 @@ public class MstUser implements Serializable {
   @Column(name = "delete_date")
   private Date deleteDate;
 
-  private int insertmstUserId;
+  private int insertId;
 
-  public void setInsertmstUserId(int insertmstUserId) {
-    this.insertmstUserId = insertmstUserId;
+  public void setInsertId(int inserId) {
+    this.insertId = insertId;
   }
 
   @PrePersist
@@ -126,4 +112,9 @@ public class MstUser implements Serializable {
     setUpdateDate(new Date());
   }
 
+  public void addObject(String userCode, String userCode1) {
+  }
+
+  public void setUpdateId(int i) {
+  }
 }

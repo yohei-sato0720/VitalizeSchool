@@ -84,13 +84,13 @@ public class AccountController {
     public String update(@PathVariable Long id, @ModelAttribute Account account) {
     	account.setInsertUserId(9001);
     	account.setUpdateUserId(9001);
-    	account.setAccountId(id);
+    	account.setId(id);
         accountService.save(account);
         return "redirect:/account/list";
     }
 
     /** to 口座機能 削除*/
-    @DeleteMapping("{id}")
+    @PostMapping("{id}")
     public String destroy(@PathVariable Long id) {
     	accountService.delete(id);
         return "redirect:/account/list";

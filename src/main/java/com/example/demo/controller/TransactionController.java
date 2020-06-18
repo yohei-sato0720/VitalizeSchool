@@ -2,6 +2,8 @@ package com.example.demo.controller;
 
 import java.util.List;
 import java.util.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 
 import javax.validation.Valid;
 import org.springframework.validation.BindingResult;
@@ -48,8 +50,28 @@ public class TransactionController {
     /** to 取引履歴機能 process 登録*/
     @PostMapping(value = "/add")
     public String create(@ModelAttribute Transaction transaction) {
-        transaction.setInsertUserId(9001);
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd hh:mm:ss");
+    	transaction.setInsertUserId(9001);
         transaction.setUpdateUserId(9001);
+
+        //振込の仕方別
+        if(transaction.getType() == 1 || transaction.getType() == 2) {
+        	transaction.setAccountNumber(transaction.getPayAccountNumber());
+        }
+
+        //最短日付か指定の日付か
+        if(transaction.getStringTradingDate() == "") {
+        	Date date = new Date();
+        	sdf.format(date);
+            transaction.setTradingDate(date);
+        }
+        try {
+            Date date = sdf.parse(transaction.getStringTradingDate());
+            transaction.setTradingDate(date);
+          } catch (ParseException e) {
+            e.printStackTrace();
+          }
+
         transactionService.save(transaction);
         return "redirect:/transaction/list";
     }
