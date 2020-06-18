@@ -66,11 +66,14 @@ public class Transaction implements Serializable{
     @Column(name="trading_date")
     private Date tradingDate;
 
+    private String stringTradingDate;
+
     /**
      * 登録者
      */
     @Column(name="insert_user_id")
     private Integer insertUserId;
+
     /**
      * 更新者
      */

@@ -2,6 +2,8 @@ package com.example.demo.controller;
 
 import java.util.List;
 import java.util.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 
 import javax.validation.Valid;
 import org.springframework.validation.BindingResult;
@@ -50,6 +52,13 @@ public class TransactionController {
     public String create(@ModelAttribute Transaction transaction) {
         transaction.setInsertUserId(9001);
         transaction.setUpdateUserId(9001);
+        try {
+            SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd hh:mm:ss");
+            Date date = format.parse(transaction.getStringTradingDate());
+            transaction.setTradingDate(date);
+          } catch (ParseException e) {
+            e.printStackTrace();
+          }
         transactionService.save(transaction);
         return "redirect:/transaction/list";
     }
