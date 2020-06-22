@@ -2,6 +2,7 @@
 <html class="no-js" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>VitalizeBank</title>
   <div id="header">
     <div th:replace="commons/header2 :: header"></div>
@@ -87,7 +88,7 @@
           <form th:action="@{/mst_user/{id}(id=*{id})}" th:method="delete">
             <input class="btn btn-danger btn-xs" type="submit" value="削除"/>
           </form>
-        <td>
+        </td>
       </tr>
       </tbody>
     </table>
