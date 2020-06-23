@@ -24,35 +24,19 @@
         </div>
       </div>
       <div class="col text-center">
-        <form th:action="@{/client/edit/{id}(id=*{id})}" th:method="post" th:object="${client}">
-          <div class="form-group">
-            <label class="control-label">顧客名</label>
-            <input class="form-control" type="text" th:field="*{clientName}"/>
-          </div>
-          <div class="form-group">
-            <label class="control-label">顧客フリガナ</label>
-            <input class="form-control" type="text" th:field="*{clientNameKana}"/>
-          </div>
-          <div class="form-group">
-            <label class="control-label">電話番号</label>
-            <input class="form-control" type="text" th:field="*{tell}"/>
-          </div>
-          <div class="form-group">
-            <label class="control-label">メールアドレス</label>
-            <input class="form-control" type="text" th:field="*{mailAddress}"/>
-          </div>
-          <div class="form-group">
-            <label class="control-label">パスワード</label>
-            <input class="form-control" type="text" th:field="*{password}"/>
-          </div>
-          <div class="form-group">
-            <button class="btn btn-primary btn-block" type="submit">更新</button>
-          </div>
-        </form>
+        <div class="row">
+          <form th:action="@{/client/edit/{id}(id=${id})}" th:method="post" th:object="${client}">
+            <div th:replace="~{client/parts/client :: InputField}">
+              <div class="form-group">
+                <button class="btn btn-primary btn-block" type="submit">更新</button>
+              </div>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
     <div class="btn">
-      <a class="btn btn-info" href="/client/list">一覧画面へ</a>
+      <a class="btn btn-info" href="/client/list">一覧画面</a>
     </div>
   </div>
 </div>

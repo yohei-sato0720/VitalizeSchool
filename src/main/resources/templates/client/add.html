@@ -24,18 +24,19 @@
         </div>
       </div>
       <div class="col text-center">
-        <form th:action="@{/client/add}" th:method="post">
-          <div th:replace="~{client/parts/client :: InputField}"></div>
-          <div class="row">
-            <div class="form-group col-sm-4">
-              <button type="submit" class="btn btn-primary btn-block">作成</button>
+        <div class="row">
+          <form th:action="@{/client/add}" th:method="post">
+            <div th:replace="~{client/parts/client :: InputField}">
+              <div class="form-group col-sm-4">
+                <button type="submit" class="btn btn-primary btn-block">作成</button>
+              </div>
             </div>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     </div>
     <div class="btn">
-      <a class="btn btn-info" href="/client/list">一覧画面へ</a>
+      <a class="btn btn-info" href="/client/list">一覧画面</a>
     </div>
   </div>
 </div>
