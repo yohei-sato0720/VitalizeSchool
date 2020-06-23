@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Page;
+import org.springframework.data.web.PageableDefault;
 
 import com.example.demo.entity.Transaction;
 import com.example.demo.service.TransactionService;
@@ -37,13 +38,19 @@ public class TransactionController {
     @Autowired
     private TransactionService transactionService;
 
-    @RequestMapping(value="/list", method=RequestMethod.GET)
+    private static final int DEFAULT_PAGEABLE_SIZE = 5;
+
+    @GetMapping(value = "/list")
     /** to 取引履歴機能 一覧画面表示*/
-    public String displayList(Model model) {
-        List<Transaction> transactionlist = transactionService.searchAll();
-        model.addAttribute("transactionlist", transactionlist);
+    /** to 取引履歴機能 ページネーション*/
+    public String displayList(@PageableDefault(size = DEFAULT_PAGEABLE_SIZE, page = 0) Model model, Pageable pageable) {
+        Page<Transaction> transactionlist = transactionService.getAll(pageable);
+        model.addAttribute("page", transactionlist);
+        model.addAttribute("transactionlist", transactionlist.getContent());
+        model.addAttribute("url", "/list");
         return "transaction/list";
     }
+
     /** to 取引履歴機能 登録画面表示*/
     @GetMapping(value = "/add")
     public String add(Model model) { return "transaction/add"; }

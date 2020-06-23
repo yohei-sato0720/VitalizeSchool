@@ -20,15 +20,12 @@ import lombok.Builder;
 @AllArgsConstructor
 @Table(name="transaction")
 public class Transaction implements Serializable{
-
-    private static final long serialVersionUID = -870708489937857961L;
     /**
      * ID
      */
     @Id
     @Column(name="id")
-    @GeneratedValue(strategy=GenerationType.TABLE, generator="seqTable")
-    @TableGenerator(name="seqTable", table="seq_table", pkColumnName="seq_name", pkColumnValue="word_seq", valueColumnName="seq_value")
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
     /**
      * 口座番号
@@ -71,7 +68,6 @@ public class Transaction implements Serializable{
      */
     @Column(name="trading_date")
     private Date tradingDate;
-
     private String stringTradingDate;
 
     /**

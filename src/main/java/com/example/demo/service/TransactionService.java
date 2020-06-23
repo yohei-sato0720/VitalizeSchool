@@ -31,6 +31,10 @@ private TransactionRepository transactionRepository;
 //    public Transaction findOne(Long id) {
 //        return transactionRepository.findById(id);
 //    }
+    // 取引履歴機能の内容とページネーションを全検索
+    public Page<Transaction> getAll(Pageable pageable) {
+        return transactionRepository.findAll(pageable);
+    }
     // 取引履歴の登録
     public Transaction save(Transaction transaction) {
         return transactionRepository.save(transaction);

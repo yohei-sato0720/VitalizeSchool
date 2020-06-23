@@ -15,4 +15,5 @@ import org.springframework.data.domain.Pageable;
 
 @Repository
 public interface TransactionRepository extends JpaRepository<Transaction, Long> {
+    public Page<Transaction> findAll(Pageable pageable);
 }
