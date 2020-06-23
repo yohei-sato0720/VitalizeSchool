@@ -47,10 +47,10 @@ public class TransactionApiController {
     private TransactionService transactionService;
 
     /** to 取引履歴 一覧取得*/
-//    @RequestMapping(method = RequestMethod.GET)
-//    public List<Transaction> getTransaction() {
-//        return transactionService.searchAll();
-//    }
+    @RequestMapping(method = RequestMethod.GET)
+    public List<Transaction> getTransaction() {
+        return transactionService.searchAll();
+    }
 
 
 }

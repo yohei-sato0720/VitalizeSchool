@@ -112,30 +112,6 @@
 		border-radius: 3px;
         box-shadow: 0 1px 1px rgba(0,0,0,.05);
     }
-	.table-wrapper .btn {
-		float: right;
-		color: #333;
-    	background-color: #fff;
-		border-radius: 3px;
-		border: none;
-		outline: none !important;
-		margin-left: 10px;
-	}
-/* 	.table-wrapper .btn:hover {
-        color: #333;
-		background: #f2f2f2;
-	} */
-	.table-wrapper .btn.btn-primary {
-		color: #fff;
-		background: #03A9F4;
-	}
-	.table-wrapper .btn.btn-primary:hover {
-		background: #03a3e7;
-	}
-	.table-title .btn {
-		font-size: 13px;
-		border: none;
-	}
 	.table-title .btn i {
 		float: left;
 		font-size: 21px;

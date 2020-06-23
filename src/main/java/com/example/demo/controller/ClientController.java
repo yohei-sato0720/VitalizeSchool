@@ -27,6 +27,11 @@ public class ClientController {
 	@Autowired
 	private ClientService clientService;
 
+    @ModelAttribute
+    Client setUpForm() {
+        return new Client();
+    }
+
 	/** to 顧客 一覧画面表示*/
     @GetMapping(value = "/list")
     public String list(Model model) {
@@ -38,6 +43,7 @@ public class ClientController {
 	/** to 顧客 登録画面表示*/
     @GetMapping(value = "/add")
     public String add(Model model) {
+        model.addAttribute("client", new Client());
         return "client/add";
     }
 
