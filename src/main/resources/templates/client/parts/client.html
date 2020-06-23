@@ -6,19 +6,19 @@
 <body>
 <div th:fragment="InputField" th:remove="tag">
 	<div class="form-group col-sm-8">
-		<input class="form-control" type="text" placeholder="顧客名" required="required" name="clientName" />
+		<input class="form-control" type="text" placeholder="顧客名" required="required" name="clientName" th:field="*{clientName}" />
 	</div>
 	<div class="form-group col-sm-8">
-		<input class="form-control" type="text" placeholder="顧客フリガナ" required="required" name="clientNameKana" />
+		<input class="form-control" type="text" placeholder="顧客フリガナ" required="required" name="clientNameKana"th:field="*{clientNameKana}" />
 	</div>
 	<div class="form-group col-sm-8">
-		<input class="form-control" type="text" placeholder="電話番号" required="required" name="tell" />
+		<input class="form-control" type="text" placeholder="電話番号" required="required" name="tell"th:field="*{tell}" />
 	</div>
 	<div class="form-group col-sm-8">
-		<input class="form-control" type="text" placeholder="メールアドレス" required="required" name="mailAddress" />
+		<input class="form-control" type="text" placeholder="メールアドレス" required="required" name="mailAddress" th:field="*{mailAddress}"/>
 	</div>
 	<div class="form-group col-sm-8">
-		<input class="form-control" type="text" placeholder="パスワード" required="required" name="password" />
+		<input class="form-control" type="text" placeholder="パスワード" required="required" name="password" th:field="*{password}"/>
 	</div>
 </div>
 </body>
