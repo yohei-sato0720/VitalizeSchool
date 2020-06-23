@@ -41,7 +41,6 @@ import com.example.demo.entity.Transaction;
 import com.example.demo.service.TaskService;
 import com.example.demo.service.TransactionService;
 
-
 @Component
 @RestController
 @Transactional
@@ -83,16 +82,16 @@ public class TaskController {
         return taskService.searchAll();
     }
 
+    /** to 取引履歴取得 口座番号検索*/
+    @GetMapping(value = "seach/{accountNumber}")
+    public Task getById(@PathVariable("accountNumber") Integer accountNumber) {
+        return taskService.findOne(accountNumber);
+    }
+
     /** to 営業時間外 入金出金処理 */
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     Task postTask(@RequestBody Task task) {
         return taskService.create(task);
     }
-//    @PostMapping(value = "/{id}")
-//    public String update(@PathVariable Long id,Task task) {
-//        Task task = transactionService.findOne(id);
-//        accountService.save(account);
-//        return "redirect:/account/list";
-//    }
 }

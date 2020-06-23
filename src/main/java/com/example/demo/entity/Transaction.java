@@ -68,7 +68,6 @@ public class Transaction implements Serializable{
      */
     @Column(name="trading_date")
     private Date tradingDate;
-
     private String stringTradingDate;
 
     /**

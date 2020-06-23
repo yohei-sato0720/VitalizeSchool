@@ -106,4 +106,8 @@ public class Task implements Serializable{
         setUpdateDate(new Date());
     }
 
+    public String toString(){
+        return "accountNumber = " + this.accountNumber + " payAccountNumber = " + this.payAccountNumber + " type = " + this.type;
+    }
+
 }

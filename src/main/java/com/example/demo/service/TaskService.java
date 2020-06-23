@@ -23,13 +23,18 @@ public class TaskService {
 */
 @Autowired
 private TaskRepository taskRepository;
-    // 取引履歴機能の内容を全検索
+    // 取引履歴の内容を全検索
     public List<Task> searchAll() {
         return taskRepository.findAll();
     }
     // 取引履歴 登録
     public Task create(Task task) {
         return taskRepository.save(task);
+    }
+
+    // 取引履歴の内容を口座で検索
+    public Task findOne(Integer accountNumber) {
+        return taskRepository.findByAccountNumber(accountNumber);
     }
 
 }
