@@ -20,6 +20,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Page;
 
 import com.example.demo.entity.Transaction;
 import com.example.demo.service.TransactionService;
@@ -35,14 +37,13 @@ public class TransactionController {
     @Autowired
     private TransactionService transactionService;
 
+    @RequestMapping(value="/list", method=RequestMethod.GET)
     /** to 取引履歴機能 一覧画面表示*/
-    @GetMapping(value = "/list")
     public String displayList(Model model) {
         List<Transaction> transactionlist = transactionService.searchAll();
         model.addAttribute("transactionlist", transactionlist);
         return "transaction/list";
     }
-
     /** to 取引履歴機能 登録画面表示*/
     @GetMapping(value = "/add")
     public String add(Model model) { return "transaction/add"; }
