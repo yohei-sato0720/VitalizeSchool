@@ -34,8 +34,8 @@
 							<main class="p-3">
 								<!-- タブ -->
 								<ul class="nav nav-tabs centered">
-									<li class="nav-item">
-										<a href="#photo1" class="nav-link active" data-toggle="tab">お預入れ</a>
+									<li class="nav-item active">
+										<a href="#photo1" class="nav-link" data-toggle="tab">お預入れ</a>
 									</li>
 									<li class="nav-item">
 										<a href="#photo2" class="nav-link" data-toggle="tab">お引出し</a>
@@ -53,12 +53,12 @@
 										<div th:replace="~{transaction/parts/transactionWithdrawal :: InputField}"></div>
 									</div>
 									<div id="photo3" class="tab-pane">
-										<div th:replace="~{transaction/parts/transactionWithdrawal :: InputField}"></div>
+										<div th:replace="~{transaction/parts/transactionRemittance :: InputField}"></div>
 									</div>
 								</div>
 
 								<div class="tabbable">
-									<ul class="nav tab-group"><!--nav-tabs nav-justified-->
+									<ul class="nav tab-group">
 										<li class="active">
 											<a href="#photo4" data-toggle="tab">最短日数</a>
 									   	</li>
@@ -77,10 +77,16 @@
 									</div>
 								</div>
 							</main>
+								<div class="form-group">
+									<button class="btn btn-primary btn-lg btn-block" type="submit">作成</button>
+								</div>
 						</div>
 					</form>
 				</div>
 			</div>
+		</div>
+		<div class="btn">
+			<a class="btn btn-info" href="/transaction/list">一覧画面へ</a>
 		</div>
 	</div>
 </div>

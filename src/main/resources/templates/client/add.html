@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-  <meta charset="utf-8"/>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>VitalizeBank</title>
   <div id="header">
     <div th:replace="commons/header2 :: header"></div>
   </div>
   <link rel="stylesheet" href="/css/bootstrap.css"/>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/list.css"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="/css/list.css"/>
 </head>
 <body>
 <div class="container">
@@ -23,19 +24,19 @@
           </div>
         </div>
       </div>
-      <div class="col text-center">
-        <form th:action="@{/client/add}" th:method="post">
-          <div th:replace="~{client/parts/client :: InputField}"></div>
-          <div class="row">
-            <div class="form-group col-sm-4">
-              <button type="submit" class="btn btn-primary btn-block">作成</button>
+      <div class="mx-auto">
+        <div class="row">
+          <form th:action="@{/client/add}" th:method="post" th:object="${client}">
+            <div th:replace="~{client/parts/client :: InputField}"></div>
+            <div class="form-group col-sm-8">
+              <button class="btn btn-primary btn-block" type="submit">作成</button>
             </div>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
-    </div>
-    <div class="btn">
-      <a class="btn btn-info" href="/client/list">一覧画面へ</a>
+      <div class="btn">
+        <a class="btn btn-info" href="/client/list">一覧画面</a>
+      </div>
     </div>
   </div>
 </div>
