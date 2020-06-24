@@ -7,19 +7,19 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
+import lombok.Getter;
+import lombok.Setter;
+import java.util.List;
 
-
-import lombok.Builder;
 /**
  * 取引履歴情報 Entity
  */
 @Entity
 @Data
-@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name="transaction")
-public class Transaction implements Serializable{
+@Table(name="task")
+public class Task implements Serializable{
     /**
      * ID
      */
@@ -68,6 +68,7 @@ public class Transaction implements Serializable{
      */
     @Column(name="trading_date")
     private Date tradingDate;
+
     private String stringTradingDate;
 
     /**
@@ -90,6 +91,7 @@ public class Transaction implements Serializable{
     /**
      * 登録日時
      */
+
     @Column(name="insert_date")
     private Date insertDate;
 
@@ -102,6 +104,10 @@ public class Transaction implements Serializable{
     @PreUpdate
     public void onPreUpdate() {
         setUpdateDate(new Date());
+    }
+
+    public String toString(){
+        return "accountNumber = " + this.accountNumber + " payAccountNumber = " + this.payAccountNumber + " type = " + this.type;
     }
 
 }

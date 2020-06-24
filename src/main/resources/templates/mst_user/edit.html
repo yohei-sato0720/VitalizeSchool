@@ -28,29 +28,19 @@
         </div>
       </div>
       <div class="col text-center">
-        <form th:action="@{/mst_user/edit/{id}(id=${id})}" th:method="post" th:object="${mstUser}">
-          <div class="form-group">
-            <label class="control-label">社員コード</label>
-            <input class="form-control" type="text" th:field="*{userCode}"/>
-          </div>
-          <div class="form-group">
-            <label class="control-label">パスワード</label>
-            <input class="form-control" type="text" th:field="*{password}"/>
-          </div>
-          <div class="form-group">
-            <label class="control-label">社員名</label>
-            <input class="form-control" type="text" th:field="*{userName}"/>
-          </div>
-          <div class="form-group">
-            <button class="btn btn-primary btn-block" type="submit">更新</button>
-          </div>
-        </form>
+        <div class="row">
+          <form th:action="@{/mst_user/edit/{id}(id=${id})}" th:method="post" th:object="${mstUser}">
+            <div th:replace="~{mst_user/parts/mstuser :: InputField}"></div>
+            <div class="form-group">
+              <button class="btn btn-primary btn-block" type="submit">更新</button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
+    <div class="btn">
+      <a class="btn btn-info" href="/mst_user/list">一覧画面</a>
+    </div>
   </div>
-  <div class="btn">
-    <a class="btn btn-info" href="/mst_user/list">一覧画面</a>
-  </div>
-</div>
 </body>
 </html>
