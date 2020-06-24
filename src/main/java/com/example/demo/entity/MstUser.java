@@ -26,6 +26,8 @@ public class MstUser implements Serializable {
   /**
    * 社員名
    */
+  @Getter
+  @Setter
   @Column(name = "user_name")
   private String userName;
 
@@ -112,7 +114,7 @@ public class MstUser implements Serializable {
     setUpdateDate(new Date());
   }
 
-  public void addObject(String userCode, String userCode1) {
+  public void addObject(String column, String column1) {
   }
 
   public void setUpdateId(int i) {

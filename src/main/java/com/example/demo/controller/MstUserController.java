@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
+import static org.springframework.web.bind.annotation.RequestMethod.*;
 import java.util.List;
 
 @Controller
@@ -16,23 +16,23 @@ public class MstUserController {
   @Autowired
   private MstUserService mstUserService;
 
-//  @RequestMapping(method = RequestMethod.GET)
-//  public String index() {
-//    return VIEW;
-//  }
-
-
   /**
    * to 検索機能　社員一覧画面
    */
-  @RequestMapping(method = RequestMethod.POST)
-  public MstUser mstUser(MstUser mstUser
-    , @RequestParam("userCode") String userCode
-    , @RequestParam("userName") String firstName
+//  @GetMapping("/list")
+//  public String search() {
+//    return "/list";
+//  }
+  @RequestMapping(value = "/mst_user/list", method = POST)
+  public String displayList(Model model
+          , @RequestParam(name = "id", required = false) Long id
+          , @RequestParam(name = "userName", required = false) String userName
+          , @RequestParam(name = "branchCode", required = false) Integer branchCode
   ) {
-    mstUser.addObject("userCode", userCode);
-    mstUser.addObject("firstName", firstName);;
-    return mstUser;
+    List<MstUser> userList = mstUserService.findUsers(id, userName, branchCode);
+    model.addAttribute("mstUserlist", userList);
+    model.addAttribute("mstUserlistSize", userList.size());
+    return "mst_user/list";
   }
 
 
@@ -41,8 +41,8 @@ public class MstUserController {
    */
   @GetMapping(value = "/list")
   public String displayList(Model model) {
-    List<MstUser> mstUserlist = mstUserService.findAll();
-    model.addAttribute("mstUserlist", mstUserlist);
+    List<MstUser> userList = mstUserService.findAll();
+    model.addAttribute("mstUserlist", userList);
     return "mst_user/list";
   }
 
