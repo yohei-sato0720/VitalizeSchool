@@ -3,8 +3,10 @@ package com.example.demo.service;
 import com.example.demo.entity.MstUser;
 import com.example.demo.repository.MstUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
-
+import org.springframework.data.jpa.domain.Specification;
+import static com.example.demo.service.MstUserSpecifications.*;
 import javax.transaction.Transactional;
 import java.util.List;
 
@@ -15,14 +17,18 @@ public class MstUserService {
   @Autowired
   private MstUserRepository mstUserRepository;
 
+  public List<MstUser> findUsers(Long id, String userName, Integer branchCode) {
+    return mstUserRepository.findAll(Specification
+            .where(MstUserSpecifications.userIdContains(id))
+            .and(MstUserSpecifications.nameContains(userName))
+            .and(MstUserSpecifications.branchCodeContains(branchCode))
+    );
+  }
+
   public List<MstUser> findAll() {
     return mstUserRepository.findAll();
   }
 
-  public List<MstUser> search(Integer userNumber, String userName, Integer branchCode) {
-    List<MstUser> result = mstUserRepository.findAll();
-    return result;
-  }
 
   public MstUser findOne(Long id) {
     return mstUserRepository.findById(id).orElse(null);

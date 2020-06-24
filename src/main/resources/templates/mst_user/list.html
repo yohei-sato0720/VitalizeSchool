@@ -14,7 +14,6 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
-<body>
 <div class="container">
   <div class="table-wrapper">
     <div class="table-title">
@@ -29,24 +28,26 @@
     </div>
     <div class="table-filter">
       <div class="mb-3">
-        <div class="row">
-          <div class="form-group col-2">
-            <label class="col-form-label col-form-label-sm">社員ID</label>
-            <input type="text" class="form-control" id="userCode" name="userCode" placeholder="テキスト入力欄"
-                   th:value="${userCode}"/>
-            <label class="col-form-label col-form-label-sm">社員名</label>
-            <input type="text" class="form-control" id="userName" name="userName" placeholder="テキスト入力欄"
-                   th:value="${userName}"/>
-            <label class="col-form-label col-form-label-sm">支店コード</label>
-            <input type="text" class="form-control" id="branch_code" name="branchCode" placeholder="テキスト入力欄"
-                   th:value="${branchCode}"/>
+        <form th:action="@{/mst_user/list}" th:method="post">
+          <div class="row">
+            <div class="form-group col-2">
+              <label class="col-form-label col-form-label-sm">社員ID</label>
+              <input type="text" class="form-control" id="id" name="id" placeholder="テキスト入力欄"
+                     th:value="${id}"/>
+              <label class="col-form-label col-form-label-sm">社員名</label>
+              <input type="text" class="form-control" id="user_name" name="userName" placeholder="テキスト入力欄"
+                     th:value="${userName}"/>
+              <label class="col-form-label col-form-label-sm">支店コード</label>
+              <input type="text" class="form-control" id="branch_code" name="branchCode" placeholder="テキスト入力欄"
+                     th:value="${branchCode}"/>
+            </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="col text-center">
-            <button type="submit" class="btn btn-primary" style="float:none;"><i class="fa fa-search"></i></button>
+          <div class="row">
+            <div class="col text-center">
+              <button type="submit" class="btn btn-primary" style="float:none;"><i class="fa fa-search"></i></button>
+            </div>
           </div>
-        </div>
+        </form>
       </div>
     </div>
     <div class="clearfix">
@@ -80,9 +81,9 @@
           class="material-icons">&#xE417;</i></a></td>
         <td><a class="settings" th:href="@{/mst_user/edit/{id}(id=*{id})}" title="Settings" data-toggle="tooltip"><i
           class="material-icons">&#xE8B8;</i></a></td>
-        <td th:text="*{userCode}"></td>
+        <td th:text="*{id}"></td>
         <td th:text="*{userName}"></td>
-        <td th:text="${#dates.format(mstUser.insertDate, 'yyyy/MM/dd')}"></td>
+        <td th:text="${#dates.format(insertDate, 'yyyy/MM/dd')}"></td>
         <td>
           <form th:action="@{/mst_user/{id}(id=*{id})}" th:method="delete">
             <input class="btn btn-danger btn-xs" type="submit" value="削除"/>
@@ -107,6 +108,4 @@
     </div>
   </div>
 </div>
-</div>
-</body>
 </html>
