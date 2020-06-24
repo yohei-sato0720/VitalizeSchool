@@ -69,7 +69,8 @@ public class ClientController {
     	client.setInsertUserId(9001);
     	client.setUpdateUserId(9001);
     	clientService.save(client);
-        return "redirect:/client/list";
+        Long newId = client.getId();
+        return "redirect:/client/"+ newId;
     }
 
 	/** to 顧客 process 編集*/
@@ -78,7 +79,7 @@ public class ClientController {
         client.setInsertUserId(9001);
     	client.setUpdateUserId(9001);
         clientService.save(client);
-        return "redirect:/client/list";
+        return "redirect:/client/"+"{id}";
     }
 
     /** to 顧客 削除*/
